@@ -1,0 +1,7 @@
+{
+  "name": "vogue merry",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
