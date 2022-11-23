@@ -35,7 +35,7 @@ export class HomePage {
         bateau: bateau
       }
     };
-    this.router.navigate(['bateau'], navigationExtras);
+    this.router.navigate(['bateaux'], navigationExtras);
   }
 
   onLoadRecette(recette: { name: string; description: string[], isOn: boolean }) {
@@ -49,6 +49,10 @@ export class HomePage {
 
   onGotoContact() {
     this.router.navigate(['/contact'])
+  }
+
+  onGoToBateaux() {
+    this.router.navigate(['/bateaux'])
   }
 
 }
