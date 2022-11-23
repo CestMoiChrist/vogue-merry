@@ -8,9 +8,9 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  onLoadProduit(produit: {name: string; description: string[], isOn:boolean}){
+  onLoadProduit(produit: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         produit: produit
@@ -19,7 +19,7 @@ export class HomePage {
     this.router.navigate(['produit'], navigationExtras);
   }
 
-  onLoadRestaurant(restaurant: {name: string; description: string[], isOn:boolean}){
+  onLoadRestaurant(restaurant: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         restaurant: restaurant
@@ -28,7 +28,7 @@ export class HomePage {
     this.router.navigate(['restaurant'], navigationExtras);
   }
 
-  onLoadBateau(bateau: {name: string; description: string[], isOn:boolean}){
+  onLoadBateau(bateau: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         bateau: bateau
@@ -37,7 +37,7 @@ export class HomePage {
     this.router.navigate(['bateau'], navigationExtras);
   }
 
-  onLoadRecette(recette: {name: string; description: string[], isOn:boolean}){
+  onLoadRecette(recette: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         recette: recette
@@ -45,5 +45,10 @@ export class HomePage {
     };
     this.router.navigate(['recette'], navigationExtras);
   }
+
+  onGotoContact() {
+    this.router.navigate(['/contact'])
+  }
+
 
 }
