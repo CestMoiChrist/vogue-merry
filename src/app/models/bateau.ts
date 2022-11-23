@@ -1,6 +1,10 @@
 export class Bateau {
-    name!:          string;
-    img!:           string;
-    description!:   string;
+  name!: string;
+  subname!: string;
+  description!: string;
+  image!: string;
 
+  constructor(name: string) {
+    this.name = name;
+  }
 }

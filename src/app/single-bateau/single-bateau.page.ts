@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Bateau } from '../models/bateau';
 
 @Component({
   selector: 'app-single-bateau',
@@ -8,12 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class SingleBateauPage implements OnInit {
   bateauName!: string;
-  bateau!: {
-    name: string;
-    subname: string;
-    description: string[];
-    image: string;
-  };
+
+  bateau!: Bateau;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe((params) => {
