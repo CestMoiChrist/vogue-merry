@@ -4,30 +4,33 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content padding>
   <h1>Nos bateaux partenaires</h1>
 
   <!-- Rendre dynamique les informations -->
   <div>
-<p>Tout les eaux mènent à Thibault.</p>
-<p>06.63.99.99.78</p>
-<p>lebateaudethibault@gmail.com</p>
-<p>www.facebook.com/lebateaudethibault</p>
-</div>
+    <p>Tout les eaux mènent à Thibault.</p>
+    <p>06.63.99.99.78</p>
+    <p>lebateaudethibault@gmail.com</p>
+    <p>www.facebook.com/lebateaudethibault</p>
+  </div>
 
-
-
-<ion-grid>
-  <ion-row>
-    <button ion-button (click)="onLoadBateau('De la brise')">De la brise</button>
-    <ion-col size="5" size-md="2" size-lg="3">1</ion-col>
-    <ion-col size="5" size-md="2" size-lg="3">2</ion-col>
-    <ion-col size="5" size-md="2" size-lg="3">3</ion-col>
-    <ion-col size="5" size-md="2" size-lg="3">4</ion-col>
-    <ion-col size="5" size-md="2" size-lg="3">5</ion-col>
-    <ion-col size="5" size-md="2" size-lg="3">6</ion-col>
-  </ion-row>
-</ion-grid>
-
+  <ion-card
+    ion-item
+    *ngFor="let bateau of bateauxList"
+    (click)="onLoadBateau(bateau)"
+  >
+    <ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <img src="{{bateau.image}}" />
+            </ion-thumbnail>
+            <ion-label>{{bateau.name}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
