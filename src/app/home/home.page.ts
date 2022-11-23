@@ -8,6 +8,7 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  urliconbato : string = "../assets/icon/bateau.png"
 
   constructor(private router: Router) { }
 
