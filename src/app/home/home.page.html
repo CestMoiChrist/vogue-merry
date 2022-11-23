@@ -7,5 +7,23 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button  (click)="onGoToBateaux()">Bateaux</button>
+
+  <img src="../assets/img/acceuil.gif">
+    <ion-card style="justify-items: center;">
+      <ion-button style="width:100%;"> 
+        Produits et promotions
+      </ion-button>
+      <ion-button style="width:47%;display:inline-block;"> 
+        Restaurants
+      </ion-button>
+      <ion-button (click)="onGoToBateaux()" style="width:47%;display:inline-block;"> 
+        Bateaux
+      </ion-button>
+      <ion-button style="width:100%;"> 
+        Recettes
+      </ion-button>
+      <ion-button (click)="onGotoContact()" style="width:100%;"> 
+        Contact
+      </ion-button>
+    </ion-card>
 </ion-content>

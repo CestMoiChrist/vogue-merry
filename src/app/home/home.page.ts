@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,46 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  onGoToBateaux(){
-    this.router.navigate(['/bateaux']);
+  onLoadProduit(produit: { name: string; description: string[], isOn: boolean }) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        produit: produit
+      }
+    };
+    this.router.navigate(['produit'], navigationExtras);
+  }
+
+  onLoadRestaurant(restaurant: { name: string; description: string[], isOn: boolean }) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        restaurant: restaurant
+      }
+    };
+    this.router.navigate(['restaurant'], navigationExtras);
+  }
+
+  onLoadBateau(bateau: { name: string; description: string[], isOn: boolean }) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        bateau: bateau
+      }
+    };
+    this.router.navigate(['bateau'], navigationExtras);
+  }
+
+  onLoadRecette(recette: { name: string; description: string[], isOn: boolean }) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        recette: recette
+      }
+    };
+    this.router.navigate(['recette'], navigationExtras);
+  }
+
+  onGotoContact() {
+    this.router.navigate(['/contact'])
   }
 
 }
