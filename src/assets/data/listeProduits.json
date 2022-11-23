@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Poissons"
+    },
+    {
+        "id": 2,
+        "name": "Coquillages"
+    },
+    {
+        "id": 3,
+        "name": "Crustacés"
+    },
+    {
+        "id": 4,
+        "name": "Promotions"
+    }
+]

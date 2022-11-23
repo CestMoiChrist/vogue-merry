@@ -50,5 +50,9 @@ export class HomePage {
     this.router.navigate(['/contact'])
   }
 
+  onGotoListeProduits() {
+    this.router.navigate(['/liste-produits'])
+  }
+
 
 }
