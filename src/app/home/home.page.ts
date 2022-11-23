@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  urliconbato: string = "../assets/icon/bateau.png"
 
   constructor(private router: Router) { }
 
@@ -34,7 +36,7 @@ export class HomePage {
         bateau: bateau
       }
     };
-    this.router.navigate(['bateau'], navigationExtras);
+    this.router.navigate(['bateaux'], navigationExtras);
   }
 
   onLoadRecette(recette: { name: string; description: string[], isOn: boolean }) {
@@ -53,6 +55,8 @@ export class HomePage {
   onGotoListeProduits() {
     this.router.navigate(['/liste-produits'])
   }
+
+
 
 
 }
