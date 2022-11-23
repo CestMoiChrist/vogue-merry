@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-single-bateau',
@@ -6,12 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-bateau.page.scss'],
 })
 export class SingleBateauPage implements OnInit {
+  bateauName!: string;
+  bateau!: {
+    name: string;
+    subname: string;
+    description: string[];
+    image: string;
+  };
 
-  bateauName: any
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.queryParams.subscribe((params) => {
+      if (this.router.getCurrentNavigation()!.extras.state) {
+        this.bateau =
+          this.router.getCurrentNavigation()!.extras.state!['bateau'];
+      }
+    });
   }
 
+  ngOnInit() {}
 }
