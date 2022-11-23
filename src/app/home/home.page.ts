@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  urliconbato : string = "../assets/icon/bateau.png"
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
-  onLoadProduit(produit: {name: string; description: string[], isOn:boolean}){
+  onLoadProduit(produit: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         produit: produit
@@ -19,7 +21,7 @@ export class HomePage {
     this.router.navigate(['produit'], navigationExtras);
   }
 
-  onLoadRestaurant(restaurant: {name: string; description: string[], isOn:boolean}){
+  onLoadRestaurant(restaurant: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         restaurant: restaurant
@@ -28,22 +30,30 @@ export class HomePage {
     this.router.navigate(['restaurant'], navigationExtras);
   }
 
-  onLoadBateau(bateau: {name: string; description: string[], isOn:boolean}){
+  onLoadBateau(bateau: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         bateau: bateau
       }
     };
-    this.router.navigate(['bateau'], navigationExtras);
+    this.router.navigate(['bateaux'], navigationExtras);
   }
 
-  onLoadRecette(recette: {name: string; description: string[], isOn:boolean}){
+  onLoadRecette(recette: { name: string; description: string[], isOn: boolean }) {
     let navigationExtras: NavigationExtras = {
       state: {
         recette: recette
       }
     };
     this.router.navigate(['recette'], navigationExtras);
+  }
+
+  onGotoContact() {
+    this.router.navigate(['/contact'])
+  }
+
+  onGoToBateaux() {
+    this.router.navigate(['/bateaux'])
   }
 
 }

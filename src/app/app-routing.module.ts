@@ -11,6 +11,29 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+
+    path: 'bateaux',
+    loadChildren: () => import('./bateaux/bateaux.module').then( m => m.BateauxPageModule)
+  },
+  {
+    path: 'single-bateau',
+    loadChildren: () => import('./single-bateau/single-bateau.module').then( m => m.SingleBateauPageModule)
+  },
+  {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+
+  },  {
+    path: 'fiche-bateau',
+    loadChildren: () => import('./fiche-bateau/fiche-bateau.module').then( m => m.FicheBateauPageModule)
+  },
+  {
+    path: 'fiche-produit',
+    loadChildren: () => import('./fiche-produit/fiche-produit.module').then( m => m.FicheProduitPageModule)
+  },
+
+
 ];
 
 @NgModule({
