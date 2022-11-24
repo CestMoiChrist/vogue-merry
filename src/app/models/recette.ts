@@ -1,12 +1,6 @@
 export class Recette {
-    id!: string;
-    name!: string;
-    category!: number;
-    price!: number;
-    unit!: number;
-    availability!: boolean;
-    sale!: boolean;
-    discount!: number;
-    comments!: string;
-    owner!: string;
+    id!:            string;
+    name!:          string;
+    img!:           string;
+    description!:   string;
 }

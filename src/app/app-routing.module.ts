@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -11,11 +12,11 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  // {
-
-  //   path: 'bateaux',
-  //   loadChildren: () => import('./bateaux/bateaux.module').then( m => m.BateauxPageModule)
-  // },
+  {
+    path: 'bateaux',
+    loadChildren: () =>
+      import('./bateaux/bateaux.module').then((m) => m.BateauxPageModule),
+  },
   {
     path: 'single-bateau',
     loadChildren: () => import('./single-bateau/single-bateau.module').then(m => m.SingleBateauPageModule)
@@ -32,14 +33,11 @@ const routes: Routes = [
   {
     path: 'liste-produits',
     loadChildren: () => import('./liste-produits/liste-produits.module').then(m => m.ListeProduitsPageModule)
-  },  {
-    path: 'categorie-produit',
-    loadChildren: () => import('./categorie-produit/categorie-produit.module').then( m => m.CategorieProduitPageModule)
   },
-
-
-
-
+  {
+    path: 'categorie-produit',
+    loadChildren: () => import('./categorie-produit/categorie-produit.module').then(m => m.CategorieProduitPageModule)
+  },
 ];
 
 @NgModule({

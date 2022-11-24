@@ -24,7 +24,7 @@ export class CategorieProduitPage implements OnInit {
   ngOnInit() {
 
     this.categorieProduitService.getProduitCategorie().subscribe(reponse => {
-      this.produitsPoisson = reponse;
+      this.categorieProduits = reponse;
     })
 
     this.categorieProduitService.getAllPoisson().subscribe(reponse => {
