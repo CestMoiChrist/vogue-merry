@@ -1,7 +1,7 @@
 [
     {
         "id": 12,
-        "name": "Moule",
+        "name": "coquillage",
         "category": 1,
         "price": 10.0,
         "unit": "kg",
@@ -9,7 +9,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Pêche à la corde",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/bigorneau.jfif"
     },
     {
         "id": 9,
@@ -21,7 +21,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Hors saison,  pêche aux casiers",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/huitre.jfif"
     },
     {
         "id": 3,
@@ -33,7 +33,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Plus de 1.5kg le poisson",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/praire.jfif"
     },
     {
         "id": 2,
@@ -45,7 +45,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Environ 550-700g la pièce",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/stjacque.png"
     },
     {
         "id": 10,
@@ -57,11 +57,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Hors saison, pêche à l'épuisette",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/bigorneau.jfif"
     },
     {
         "id": 1,
-        "name": "Filet Bar de ligne",
+        "name": "Couteau",
         "category": 1,
         "price": 7.0,
         "unit": "2 filets",
@@ -69,11 +69,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "environ 300g",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/couteau.jfif"
     },
     {
         "id": 5,
-        "name": "Filet Julienne",
+        "name": "Bulot",
         "category": 1,
         "price": 19.0,
         "unit": "kg",
@@ -81,11 +81,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Pêche à la corde",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/bulot.jfif"
     },
     {
         "id": 7,
-        "name": "Huitres N°2 St Vaast",
+        "name": "Ormeau",
         "category": 1,
         "price": 9.5,
         "unit": "Dz",
@@ -93,7 +93,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/ormeaux.jfif"
     },
     {
         "id": 8,
@@ -105,11 +105,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/huitre.jfif"
     },
     {
         "id": 13,
-        "name": "Huîtres N°2 OR St Vaast",
+        "name": "Palourde",
         "category": 1,
         "price": 12.0,
         "unit": "Dz",
@@ -117,11 +117,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Médaille d'or Salon Agriculture",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/palourde.jfif"
     },
     {
         "id": 14,
-        "name": "Huîtres N°2 OR St Vaast",
+        "name": "Bigorneaux",
         "category": 1,
         "price": 24.0,
         "unit": "2 Dz",
@@ -129,7 +129,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Médaille d'or salon agriculture",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/bigorneau.jfif"
     },
     {
         "id": 15,
@@ -145,7 +145,7 @@
     },
     {
         "id": 16,
-        "name": "Huîtres N°2 St Vaast",
+        "name": "Huîtres N°3 St Vaast",
         "category": 1,
         "price": 19.0,
         "unit": "2 Dz",
@@ -157,7 +157,7 @@
     },
     {
         "id": 4,
-        "name": "Lieu jaune de ligne",
+        "name": "Pousses pieds",
         "category": 1,
         "price": 12.0,
         "unit": "kg",
@@ -165,7 +165,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Environ 550-700g la portion",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/bigorneau.jfif"
     },
     {
         "id": 6,
@@ -177,6 +177,6 @@
         "sale": true,
         "discount": 5.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgcoquillage/moule.jfif"
     }
 ]

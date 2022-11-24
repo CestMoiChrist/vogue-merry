@@ -49,19 +49,22 @@ export class CategorieProduitPage implements OnInit {
 
   onLoadProduits(choixCategorie: string) {
     var res = {};
-    if (choixCategorie === "0") {
+    if (choixCategorie == "0") {
       res = this.produitsPoisson
+      console.log("check" + res)
     }
-    if (choixCategorie === "1") {
+    if (choixCategorie == "1") {
       res = this.produitsCoquillage
+      console.log("check" + res)
     }
-    if (choixCategorie === "2") {
+    if (choixCategorie == "2") {
       res = this.produitsCrustace
+      console.log("check" + res)
     }
     let navigationExtras: NavigationExtras = {
 
       state: {
-        produit: res
+        produits: res
       }
     }
     this.router.navigate(['liste-produits'], navigationExtras);
