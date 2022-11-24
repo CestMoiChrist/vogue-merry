@@ -14,8 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'bateaux',
-    loadChildren: () =>
-      import('./bateaux/bateaux.module').then((m) => m.BateauxPageModule),
+    loadChildren: () => import('./bateaux/bateaux.module').then( m => m.BateauxPageModule)
   },
   {
     path: 'single-bateau',
@@ -37,6 +36,14 @@ const routes: Routes = [
   {
     path: 'categorie-produit',
     loadChildren: () => import('./categorie-produit/categorie-produit.module').then(m => m.CategorieProduitPageModule)
+  },
+  {
+    path: 'restaurants',
+    loadChildren: () => import('./restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
+  },
+  {
+    path: 'single-restaurant',
+    loadChildren: () => import('./single-restaurant/single-restaurant.module').then( m => m.SingleRestaurantPageModule)
   },
 ];
 

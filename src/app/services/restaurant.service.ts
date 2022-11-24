@@ -6,6 +6,7 @@ import { Restaurant } from '../models/restaurant';
   providedIn: 'root'
 })
 export class RestaurantService {
+  restaurantsList!: Restaurant[];
 
   constructor(private http:HttpClient) { }
 
