@@ -23,11 +23,11 @@ export class SingleProduitPage implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if(this.router.getCurrentNavigation()!.extras.state){
-        this.produit = this.router.getCurrentNavigation()!.extras.state!['produit'];
-        console.log(this.produit);
-      }
+      this.route.queryParams.subscribe(params => {
+        if(this.router.getCurrentNavigation()!.extras.state){
+          this.produit = this.router.getCurrentNavigation()!.extras.state!['produit'];
+          console.log(this.produit);
+        }
     });
   }
 
