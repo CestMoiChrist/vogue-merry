@@ -13,6 +13,7 @@
           <img src="../assets/img/categorieProduit/{{ categorie.categorieProduit }}.jpg" />
         </ion-thumbnail>
         <ion-label (click)="onLoadCrustaces(categorieProduits)" >{{ categorie.categorieProduit }}</ion-label> -->
+        <ion-label (click)="onLoadProduits(categorie.id)">{{ categorie.categorieProduit }}</ion-label>
       </ion-item>
     </ion-list>
   </ion-card-content>

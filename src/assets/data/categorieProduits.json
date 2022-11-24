@@ -1,18 +1,18 @@
 [
     {
-        "id": 1,
+        "id": 0,
         "categorieProduit": "Poissons"
     },
     {
-        "id": 2,
+        "id": 1,
         "categorieProduit": "Coquillages"
     },
     {
-        "id": 3,
+        "id": 2,
         "categorieProduit": "Crustaces"
     },
     {
-        "id": 4,
+        "id": 3,
         "categorieProduit": "Promotions"
     }
 ]

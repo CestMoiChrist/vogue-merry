@@ -1,10 +1,11 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>
       Vogue Marry
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+<app-header></app-header>
 
 <ion-content padding>
 
@@ -22,7 +23,7 @@
       <ion-icon  slot="start" name="boat-outline"></ion-icon>
         Bateaux
       </ion-button>
-      <ion-button style="width:47%;display:inline-block;">
+      <ion-button (click)="onGotoRecette()" style="width:47%;display:inline-block;">
       <!-- <img src="../assets/icon/recette.png" style="width:9%; height:38%;"> -->
       <ion-icon  slot="start" name="fast-food-outline"></ion-icon>
         Recettes

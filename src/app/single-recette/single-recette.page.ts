@@ -10,7 +10,8 @@ export class SingleRecettePage implements OnInit {
   recette!: {
     id:            string;
     name:          string;
-    category:      number;
+    img:           string;
+    description:   string;
    }
 
   constructor(private route: ActivatedRoute, private router: Router) { }
