@@ -61,7 +61,7 @@ export class CategorieProduitPage implements OnInit {
   }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        poissons: produit
+        produit: produit
       }
     };
     this.router.navigate(['liste-produits'], navigationExtras);
@@ -81,7 +81,7 @@ export class CategorieProduitPage implements OnInit {
   }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        promotions: produit
+        produit: produit
       }
     };
     this.router.navigate(['liste-produits'], navigationExtras);
@@ -101,7 +101,7 @@ export class CategorieProduitPage implements OnInit {
   }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        coquillages: produit
+        produit: produit
       }
     };
     this.router.navigate(['liste-produits'], navigationExtras);
@@ -121,14 +121,9 @@ export class CategorieProduitPage implements OnInit {
   }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        crustaces: produit
+        produit: produit
       }
     };
     this.router.navigate(['liste-produits'], navigationExtras);
-  }
-
-
-  onGotoListeProduit() {
-    this.router.navigate(['/liste-produits'])
   }
 }
