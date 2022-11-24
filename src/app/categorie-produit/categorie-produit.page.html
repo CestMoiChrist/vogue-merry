@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Catégorie produits</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-content padding>
+    <ion-list>
+      <ion-item ion-item *ngFor="let categorie of categorieProduits"
+      (click)="onLoadCategorieProduits(categorie)">
+        <ion-thumbnail slot="start">
+          <img src="../assets/img/categorieProduit/{{ categorie.categorieProduit }}.jpg" />
+        </ion-thumbnail>
+        <ion-label>{{ categorie.categorieProduit }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

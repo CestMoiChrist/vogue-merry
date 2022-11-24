@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
+
+import { ProduitService } from '../services/produit.service';
+import { Produit } from '../models/produit';
 
 @Component({
   selector: 'app-liste-produits',

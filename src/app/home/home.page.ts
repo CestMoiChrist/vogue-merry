@@ -56,7 +56,12 @@ export class HomePage {
     this.router.navigate(['/liste-produits'])
   }
 
+  onGotoCategorieProduits() {
+    this.router.navigate(['/categorie-produit'])
+  }
 
-
+  onGoToBateaux() {
+    this.router.navigate(['/bateaux'])
+  }
 
 }

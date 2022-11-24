@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
     path: '',
@@ -18,21 +18,26 @@ const routes: Routes = [
   // },
   {
     path: 'single-bateau',
-    loadChildren: () => import('./single-bateau/single-bateau.module').then( m => m.SingleBateauPageModule)
+    loadChildren: () => import('./single-bateau/single-bateau.module').then(m => m.SingleBateauPageModule)
   },
   {
     path: 'contact',
-    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
+    loadChildren: () => import('./contact/contact.module').then(m => m.ContactPageModule)
 
   },
   {
     path: 'single-produit',
-    loadChildren: () => import('./single-produit/single-produit.module').then( m => m.SingleProduitPageModule)
+    loadChildren: () => import('./single-produit/single-produit.module').then(m => m.SingleProduitPageModule)
   },
   {
     path: 'liste-produits',
-    loadChildren: () => import('./liste-produits/liste-produits.module').then( m => m.ListeProduitsPageModule)
+    loadChildren: () => import('./liste-produits/liste-produits.module').then(m => m.ListeProduitsPageModule)
+  },  {
+    path: 'categorie-produit',
+    loadChildren: () => import('./categorie-produit/categorie-produit.module').then( m => m.CategorieProduitPageModule)
   },
+
+
 
 
 ];
