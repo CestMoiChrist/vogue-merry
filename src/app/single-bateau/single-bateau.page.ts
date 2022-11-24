@@ -7,25 +7,22 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-bateau.page.scss'],
 })
 export class SingleBateauPage implements OnInit {
-
-  bateauName: any
+  bateauName!: string;
   bateau!: {
-    id:            string;
-    name:          string;
-    img:      string;
-    description:         string;
+    name: string;
+    subname: string;
+    description: string[];
+    image: string;
+  };
 
-   }
-
-  constructor(private route: ActivatedRoute, private router: Router) { }
-
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if(this.router.getCurrentNavigation()!.extras.state){
-        this.bateau = this.router.getCurrentNavigation()!.extras.state!['bateau'];
-        console.log(this.bateau);
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.queryParams.subscribe((params) => {
+      if (this.router.getCurrentNavigation()!.extras.state) {
+        this.bateau =
+          this.router.getCurrentNavigation()!.extras.state!['bateau'];
       }
     });
   }
 
+  ngOnInit() {}
 }
