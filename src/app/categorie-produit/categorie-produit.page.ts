@@ -18,17 +18,7 @@ export class CategorieProduitPage implements OnInit {
   ngOnInit() {
     this.categorieProduitService.getProduitCategorie().subscribe(reponse => {
       this.categorieProduits = reponse;
-      console.log("y a quoi dedans" + this.categorieProduits)
     })
-  }
-  onLoadCategorieProduits(categorieProduits: { id: string, categorieProduit: string }) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        categorie: categorieProduits
-
-      }
-    };
-    this.router.navigate(['/liste-produits'], navigationExtras);
   }
 
 }

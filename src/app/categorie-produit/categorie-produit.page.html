@@ -8,7 +8,7 @@
   <ion-card-content padding>
     <ion-list>
       <ion-item ion-item *ngFor="let categorie of categorieProduits"
-      (click)="onLoadCategorieProduits(categorie)">
+      >
         <ion-thumbnail slot="start">
           <img src="../assets/img/categorieProduit/{{ categorie.categorieProduit }}.jpg" />
         </ion-thumbnail>
