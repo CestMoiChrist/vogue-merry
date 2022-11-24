@@ -17,6 +17,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./bateaux/bateaux.module').then((m) => m.BateauxPageModule),
   },
+
   {
     path: 'single-bateau',
     loadChildren: () =>
@@ -36,6 +37,13 @@ const routes: Routes = [
         (m) => m.SingleProduitPageModule
       ),
   },
+
+  {
+    path: 'single-recette',
+    loadChildren: () => import('./single-recette/single-recette.module').then( m => m.SingleRecettePageModule)
+  },
+
+
 ];
 
 @NgModule({
