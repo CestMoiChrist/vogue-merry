@@ -22,6 +22,26 @@ export class ListeProduitsPage implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+
+  onLoadProduit(produit: {
+    id:            string;
+    name:         string;
+    category:      number;
+    price:         number;
+    unit:          number;
+    availability:  boolean;
+    sale:          boolean;
+    discount:      number;
+    comments:      string;
+    owner:         string;}){
+    let navigationExtras: NavigationExtras = {
+      state: {
+        produit: produit
+      }
+    };
+    this.router.navigate(['single-produit'], navigationExtras);
   }
 
 

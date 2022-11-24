@@ -5,9 +5,8 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let produit of produits">
-
-        <h3> {{ produit.name }} </h3>
-
+  <ion-card *ngFor="let produit of produits" style="height:10%;padding:3%;vertical-align: middle;">
+        <h4 style="float:left;" (click)="onLoadProduit(produit)"> {{ produit.name }} </h4>
+        <img [src]="produit.owner" style="width:17%;height:95%;float: right;margin:2%;border-radius: 50%;">
   </ion-card>
 </ion-content>
