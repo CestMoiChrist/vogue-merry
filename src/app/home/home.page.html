@@ -10,12 +10,12 @@
 
   <img src="../assets/img/acceuil.gif">
     <ion-card style="text-align: center; justify-content: left;">
-      <ion-button style="width:100%;">
+      <ion-button (click)="onGotoCategorieProduits()" style="width:100%;">
       <ion-icon  slot="start" name="fish-outline" float-left></ion-icon>
         Produits et promotions
       </ion-button>
       <ion-button (click)="onGoToRestaurants()" style="width:47%;display:inline-block;">
-      <ion-icon slot="start" name="restaurant-outline"></ion-icon> 
+      <ion-icon slot="start" name="restaurant-outline"></ion-icon>
         Restaurants
       </ion-button>
       <ion-button (click)="onGoToBateaux()" style="width:47%;display:inline-block;"> 

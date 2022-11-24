@@ -8,7 +8,7 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  urliconbato : string = "../assets/icon/bateau.png"
+  urliconbato: string = "../assets/icon/bateau.png"
 
   constructor(private router: Router) { }
 
@@ -50,6 +50,14 @@ export class HomePage {
 
   onGotoContact() {
     this.router.navigate(['/contact'])
+  }
+
+  onGotoListeProduits() {
+    this.router.navigate(['/liste-produits'])
+  }
+
+  onGotoCategorieProduits() {
+    this.router.navigate(['/categorie-produit'])
   }
 
   onGoToBateaux() {
