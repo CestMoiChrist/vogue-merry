@@ -12,4 +12,20 @@ export class ProduitService {
   getAllProduit(){
     return this.http.get<Produit[]>('assets/data/produits.json'); 
   }
+
+  getAllPoisson(){
+    return this.http.get<Produit[]>('assets/data/poissons.json'); 
+  }
+
+  getAllCoquillage(){
+    return this.http.get<Produit[]>('assets/data/coquillages.json'); 
+  }
+
+  getAllCrustace(){
+    return this.http.get<Produit[]>('assets/data/crustaces.json'); 
+  }
+
+  getAllPromotion(){
+    return this.http.get<Produit[]>('assets/data/promotions.json'); 
+  }
 }
