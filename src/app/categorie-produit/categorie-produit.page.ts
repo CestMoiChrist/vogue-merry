@@ -107,7 +107,7 @@ export class CategorieProduitPage implements OnInit {
     this.router.navigate(['liste-produits'], navigationExtras);
   }
 
-  onLoadCrustaces(produit: {
+  onLoadCrustaces(produitsCrustace: {
     id: string;
     name: string;
     category: number;
@@ -121,7 +121,7 @@ export class CategorieProduitPage implements OnInit {
   }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        produit: produit
+        produit: produitsCrustace
       }
     };
     this.router.navigate(['liste-produits'], navigationExtras);

@@ -32,7 +32,7 @@ export class ListeProduitsPage implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       if(this.router.getCurrentNavigation()!.extras.state){
-        this.produit = this.router.getCurrentNavigation()!.extras.state!['list-produit'];
+        this.produit = this.router.getCurrentNavigation()!.extras.state!['produit'];
         console.log(this.produit);
       }
 
