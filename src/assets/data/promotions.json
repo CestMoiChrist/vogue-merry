@@ -1,13 +1,13 @@
 [
     {
         "id": 12,
-        "name": "Aile de raie",
+        "name": "promotions",
         "category": 0,
         "price": 10.0,
         "unit": "kg",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Pêche à la corde",
         "owner": "tig"
     },
@@ -19,7 +19,7 @@
         "unit": "kg",
         "availability": false,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Hors saison,  pêche aux casiers",
         "owner": "tig"
     },
@@ -31,7 +31,7 @@
         "unit": "kg",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Plus de 1.5kg le poisson",
         "owner": "tig"
     },
@@ -43,7 +43,7 @@
         "unit": "pièce",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Environ 550-700g la pièce",
         "owner": "tig"
     },
@@ -55,7 +55,7 @@
         "unit": "100g",
         "availability": false,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Hors saison, pêche à l'épuisette",
         "owner": "tig"
     },
@@ -67,7 +67,7 @@
         "unit": "2 filets",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "environ 300g",
         "owner": "tig"
     },
@@ -79,7 +79,7 @@
         "unit": "kg",
         "availability": false,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Pêche à la corde",
         "owner": "tig"
     },
@@ -91,7 +91,7 @@
         "unit": "Dz",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "",
         "owner": "tig"
     },
@@ -103,7 +103,7 @@
         "unit": "4 Dz",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "",
         "owner": "tig"
     },
@@ -115,7 +115,7 @@
         "unit": "Dz",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Médaille d'or Salon Agriculture",
         "owner": "tig"
     },
@@ -127,7 +127,7 @@
         "unit": "2 Dz",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Médaille d'or salon agriculture",
         "owner": "tig"
     },
@@ -139,7 +139,7 @@
         "unit": "4 Dz",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Médaille d'or salon agriculture",
         "owner": "tig"
     },
@@ -151,7 +151,7 @@
         "unit": "2 Dz",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "",
         "owner": "tig"
     },
@@ -163,7 +163,7 @@
         "unit": "kg",
         "availability": true,
         "sale": false,
-        "discount": 5.0
+        "discount": 5.0,
         "comments": "Environ 550-700g la portion",
         "owner": "tig"
     },
