@@ -1,0 +1,7 @@
+<ion-content>
+  <h2>{{restaurant.nom}}</h2>
+  <img src={{restaurant.image}} alt={{restaurant.nom}}>
+  <p>Adresse: {{restaurant.adresse}}<br><br>Horaire:</p>
+  <p *ngFor="let horaire of restaurant.horaire">{{horaire}}</p>
+  <p>Site Web: <a href={{restaurant.site_web}} target="_blank">{{restaurant.site_web}}</a></p>
+</ion-content>

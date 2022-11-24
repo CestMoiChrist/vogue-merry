@@ -11,11 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  // {
-
-  //   path: 'bateaux',
-  //   loadChildren: () => import('./bateaux/bateaux.module').then( m => m.BateauxPageModule)
-  // },
+  {
+    path: 'bateaux',
+    loadChildren: () => import('./bateaux/bateaux.module').then( m => m.BateauxPageModule)
+  },
   {
     path: 'single-bateau',
     loadChildren: () => import('./single-bateau/single-bateau.module').then( m => m.SingleBateauPageModule)
@@ -29,6 +28,15 @@ const routes: Routes = [
     path: 'single-produit',
     loadChildren: () => import('./single-produit/single-produit.module').then( m => m.SingleProduitPageModule)
   },
+  {
+    path: 'restaurants',
+    loadChildren: () => import('./restaurants/restaurants.module').then( m => m.RestaurantsPageModule)
+  },
+  {
+    path: 'single-restaurant',
+    loadChildren: () => import('./single-restaurant/single-restaurant.module').then( m => m.SingleRestaurantPageModule)
+  },
+
 
 
 ];

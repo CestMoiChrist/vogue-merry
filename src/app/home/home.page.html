@@ -11,24 +11,24 @@
   <img src="../assets/img/acceuil.gif">
     <ion-card style="text-align: center; justify-content: left;">
       <ion-button style="width:100%;">
-      <ion-icon name="fish-outline" float-left></ion-icon>
+      <ion-icon  slot="start" name="fish-outline" float-left></ion-icon>
         Produits et promotions
       </ion-button>
-      <ion-button style="width:47%;display:inline-block;">
-      <ion-icon name="boat-outline"></ion-icon> 
+      <ion-button (click)="onGoToRestaurants()" style="width:47%;display:inline-block;">
+      <ion-icon slot="start" name="restaurant-outline"></ion-icon> 
         Restaurants
       </ion-button>
       <ion-button (click)="onGoToBateaux()" style="width:47%;display:inline-block;"> 
-      <ion-icon name="boat-outline"></ion-icon>
+      <ion-icon  slot="start" name="boat-outline"></ion-icon>
         Bateaux
       </ion-button>
       <ion-button style="width:47%;display:inline-block;">
       <!-- <img src="../assets/icon/recette.png" style="width:9%; height:38%;"> -->
-      <ion-icon name="fast-food-outline"></ion-icon>
+      <ion-icon  slot="start" name="fast-food-outline"></ion-icon>
         Recettes
       </ion-button>
       <ion-button (click)="onGotoContact()" style="width:47%;display:inline-block;"> 
-      <ion-icon name="call-outline"></ion-icon>
+      <ion-icon  slot="start" name="call-outline"></ion-icon>
         Contact
       </ion-button>
     </ion-card>
