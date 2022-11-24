@@ -47,83 +47,23 @@ export class CategorieProduitPage implements OnInit {
   }
 
 
-  onLoadPoissons(produit: {
-    id: string;
-    name: string;
-    category: number;
-    price: number;
-    unit: number;
-    availability: boolean;
-    sale: boolean;
-    discount: number;
-    comments: string;
-    owner: string;
-  }) {
+  onLoadProduits(choixCategorie: string) {
+    var res = {};
+    if (choixCategorie === "0") {
+      res = this.produitsPoisson
+    }
+    if (choixCategorie === "1") {
+      res = this.produitsCoquillage
+    }
+    if (choixCategorie === "2") {
+      res = this.produitsCrustace
+    }
     let navigationExtras: NavigationExtras = {
-      state: {
-        produit: produit
-      }
-    };
-    this.router.navigate(['liste-produits'], navigationExtras);
-  }
 
-  onLoadPromotions(produit: {
-    id: string;
-    name: string;
-    category: number;
-    price: number;
-    unit: number;
-    availability: boolean;
-    sale: boolean;
-    discount: number;
-    comments: string;
-    owner: string;
-  }) {
-    let navigationExtras: NavigationExtras = {
       state: {
-        produit: produit
+        produit: res
       }
-    };
+    }
     this.router.navigate(['liste-produits'], navigationExtras);
-  }
-
-  onLoadCoquillages(produit: {
-    id: string;
-    name: string;
-    category: number;
-    price: number;
-    unit: number;
-    availability: boolean;
-    sale: boolean;
-    discount: number;
-    comments: string;
-    owner: string;
-  }) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        produit: produit
-      }
-    };
-    this.router.navigate(['liste-produits'], navigationExtras);
-  }
-
-  onLoadCrustaces(produit: {
-    id: string;
-    name: string;
-    category: number;
-    price: number;
-    unit: number;
-    availability: boolean;
-    sale: boolean;
-    discount: number;
-    comments: string;
-    owner: string;
-  }) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        produit: produit
-      }
-    };
-    this.router.navigate(['liste-produits'], navigationExtras);
-  }
+  };
 }

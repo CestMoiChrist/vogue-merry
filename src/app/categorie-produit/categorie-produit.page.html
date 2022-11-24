@@ -12,7 +12,7 @@
         <ion-thumbnail slot="start">
           <img src="../assets/img/categorieProduit/{{ categorie.categorieProduit }}.jpg" />
         </ion-thumbnail>
-        <ion-label (click)="onGotoListeProduit()" >{{ categorie.categorieProduit }}</ion-label>
+        <ion-label (click)="onLoadProduits(categorie.id)">{{ categorie.categorieProduit }}</ion-label>
       </ion-item>
     </ion-list>
   </ion-card-content>
