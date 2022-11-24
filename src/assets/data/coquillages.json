@@ -1,7 +1,7 @@
 [
     {
         "id": 12,
-        "name": "Aile de raie",
+        "name": "Moule",
         "category": 1,
         "price": 10.0,
         "unit": "kg",
@@ -13,7 +13,7 @@
     },
     {
         "id": 9,
-        "name": "Araignées",
+        "name": "Huitre",
         "category": 1,
         "price": 7.0,
         "unit": "kg",
@@ -25,7 +25,7 @@
     },
     {
         "id": 3,
-        "name": "Bar de ligne",
+        "name": "Praires",
         "category": 1,
         "price": 30.0,
         "unit": "kg",
@@ -37,7 +37,7 @@
     },
     {
         "id": 2,
-        "name": "Bar de ligne portion",
+        "name": "Coquille St Jacque",
         "category": 1,
         "price": 10.0,
         "unit": "pièce",

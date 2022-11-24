@@ -2,19 +2,19 @@
     {
         "id": 12,
         "name":          "Crabe farci",
-        "img":           "../assets/icon/recette.png",
+        "img":           "../assets/img/recette.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 13,
         "name":          "Sardine grillée",
-        "img":           "../assets/icon/recette.png",
+        "img":           "../assets/img/recette.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 15,
         "name":          "Poisson chat fris",
-        "img":           "../assets/icon/recette.png",
+        "img":           "../assets/img/recette.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     }
 ]

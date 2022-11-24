@@ -67,4 +67,8 @@ export class HomePage {
   onGoToRestaurants() {
     this.router.navigate(['/restaurants'])
   }
+
+  onGotoRecette(){
+    this.router.navigate(['/list-recette'])
+  }
 }
