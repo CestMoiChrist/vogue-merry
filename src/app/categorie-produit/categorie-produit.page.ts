@@ -3,6 +3,8 @@ import { NavigationExtras, Router } from '@angular/router';
 
 import { CategorieProduit } from '../models/categorieProduit';
 import { CategorieProduitService } from '../services/categorie-produit.service';
+import { Produit } from '../models/produit';
+import { ProduitService } from '../services/produit.service';
 
 @Component({
   selector: 'app-categorie-produit',
@@ -12,14 +14,14 @@ import { CategorieProduitService } from '../services/categorie-produit.service';
 export class CategorieProduitPage implements OnInit {
 
   categorieProduits: CategorieProduit[] = [];
-  produitsPoisson: CategorieProduit[] = [];
-  produitsCoquillage: CategorieProduit[] = [];
-  produitsCrustace: CategorieProduit[] = [];
-  produitsPromotion: CategorieProduit[] = [];
+  produitsPoisson: Produit[] = [];
+  produitsCoquillage: Produit[] = [];
+  produitsCrustace: Produit[] = [];
+  produitsPromotion: Produit[] = [];
 
 
   constructor(private router: Router,
-    private categorieProduitService: CategorieProduitService) { }
+    private categorieProduitService: CategorieProduitService, private produitService: ProduitService) { }
 
   ngOnInit() {
 
@@ -27,25 +29,25 @@ export class CategorieProduitPage implements OnInit {
       this.categorieProduits = reponse;
     })
 
-    this.categorieProduitService.getAllPoisson().subscribe(reponse => {
+    this.produitService.getAllPoisson().subscribe(reponse => {
       this.produitsPoisson = reponse;
     })
 
-    this.categorieProduitService.getAllCoquillage().subscribe(reponse => {
+    this.produitService.getAllCoquillage().subscribe(reponse => {
       this.produitsCoquillage = reponse;
     })
 
-    this.categorieProduitService.getAllCrustace().subscribe(reponse => {
+    this.produitService.getAllCrustace().subscribe(reponse => {
       this.produitsCrustace = reponse;
     })
 
-    this.categorieProduitService.getAllPromotion().subscribe(reponse => {
+    this.produitService.getAllPromotion().subscribe(reponse => {
       this.produitsPromotion = reponse;
     })
   }
 
 
-  onLoadPoissons(CategorieProduit: {
+  onLoadPoissons(produit: {
     id: string;
     name: string;
     category: number;
@@ -59,38 +61,74 @@ export class CategorieProduitPage implements OnInit {
   }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        poissons: produitsPoisson
+        poissons: produit
       }
     };
     this.router.navigate(['liste-produits'], navigationExtras);
   }
 
-  onLoadCrustaces(recette: { name: string; description: string[], isOn: boolean }) {
+  onLoadPromotions(produit: {
+    id: string;
+    name: string;
+    category: number;
+    price: number;
+    unit: number;
+    availability: boolean;
+    sale: boolean;
+    discount: number;
+    comments: string;
+    owner: string;
+  }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        recette: recette
+        promotions: produit
       }
     };
-    this.router.navigate(['recette'], navigationExtras);
+    this.router.navigate(['liste-produits'], navigationExtras);
   }
 
-  onLoadCoquillages(recette: { name: string; description: string[], isOn: boolean }) {
+  onLoadCoquillages(produit: {
+    id: string;
+    name: string;
+    category: number;
+    price: number;
+    unit: number;
+    availability: boolean;
+    sale: boolean;
+    discount: number;
+    comments: string;
+    owner: string;
+  }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        recette: recette
+        coquillages: produit
       }
     };
-    this.router.navigate(['recette'], navigationExtras);
+    this.router.navigate(['liste-produits'], navigationExtras);
   }
 
-  onLoadPromotions(recette: { name: string; description: string[], isOn: boolean }) {
+  onLoadCrustaces(produit: {
+    id: string;
+    name: string;
+    category: number;
+    price: number;
+    unit: number;
+    availability: boolean;
+    sale: boolean;
+    discount: number;
+    comments: string;
+    owner: string;
+  }) {
     let navigationExtras: NavigationExtras = {
       state: {
-        recette: recette
+        crustaces: produit
       }
     };
-    this.router.navigate(['recette'], navigationExtras);
+    this.router.navigate(['liste-produits'], navigationExtras);
   }
 
 
+  onGotoListeProduit() {
+    this.router.navigate(['/liste-produits'])
+  }
 }
