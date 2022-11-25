@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { ToastOptions } from '@ionic/angular';
 
 @Component({
   selector: 'app-single-produit',
@@ -20,7 +23,7 @@ export class SingleProduitPage implements OnInit {
     owner:         string;
    }
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router, private toast: ToastController) { }
 
   ngOnInit() {
       this.route.queryParams.subscribe(params => {
@@ -29,6 +32,17 @@ export class SingleProduitPage implements OnInit {
           console.log(this.produit);
         }
     });
+  }
+
+  async presentToast(position:'top' | 'middle' | 'bottom'){
+    const toast = await this.toast.create({
+      message: "Les alertes fonctionnent",
+      duration: 1500,
+      position: position,
+      // color?: "Blue",
+    })
+    await toast.present();
+    console.log(toast)
   }
 
 }
