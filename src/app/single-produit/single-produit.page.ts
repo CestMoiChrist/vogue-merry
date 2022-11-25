@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController, ToastOptions } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { panier } from '../models/panier';
 import { Produit } from '../models/produit';
@@ -42,8 +42,7 @@ export class SingleProduitPage implements OnInit {
       this.storage.create();
     }
     this.storage.get("cart").then((data: panier[]) => {
-      console.log(" 1er " + data)
-      if (data === null) {
+      if (data === null || data.length === 0) {
         data = [];
         data.push({
           item: produit,
@@ -53,8 +52,7 @@ export class SingleProduitPage implements OnInit {
         console.log(data)
       }
       else {
-        //si le panier est vide
-        console.log("on arrive ici")
+        //s'il y a deja un produit
         for (let i = 0; i < data.length; i++) {
           const element: panier = data[i];
           if (produit.id === element.item.id) {
