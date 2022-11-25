@@ -15,6 +15,8 @@ import { getRenderingRef } from 'ionicons/dist/types/stencil-public-runtime';
 export class ListeProduitsPage implements OnInit {
 
   produits: Produit[] = [];
+  handlerMessage = '';
+  roleMessage = '';
 
   constructor(private router: Router, private route: ActivatedRoute, private toast: ToastController) {
     this.route.queryParams.subscribe(params => {
@@ -50,13 +52,49 @@ export class ListeProduitsPage implements OnInit {
 
   async presentToast(position:'top' | 'middle' | 'bottom'){
     const toast = await this.toast.create({
-      message: "Les alertes fonctionnent",
+      message: "Les alertes changent",
       duration: 1500,
       position: position,
       // color?: "Blue",
     })
     await toast.present();
     console.log(toast)
+  }
+
+  async deleteToast(position:'top' | 'middle' | 'bottom'){
+    console.log("deleteToast");
+    const toast = await this.toast.create({
+      message: "Etes vous sûres de vouloir supprimer l'article?",
+      duration: 3000,
+      position: position,
+      buttons: [
+        {
+          text: 'Oui',
+          role: 'info',
+          handler: () => { 
+            this.handlerMessage = 'Article supprimé';
+            this.removeItem(); }
+        },
+        {
+          text: 'Annuler',
+          role: 'cancel',
+          handler: () => { 
+            this.handlerMessage = "";
+          }
+        }
+      ]
+      // color?: "Blue",
+    })
+    await toast.present();
+    // const { role } = await toast.onDidDismiss();
+    // this.roleMessage = `Dismissed with role: ${role}`;
+  }
+
+  removeItem(): void{
+    console.log("hello")
+    // this.deleteToast('bottom');
+    // this.cartItems.splice(index,1);
+    //this.storage.set("cart", this.cartItems)
   }
 
 

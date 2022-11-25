@@ -19,7 +19,8 @@ export class ListRecettePage implements OnInit {
       console.log(this.recetteList)
     },
     err =>{
-      console.log("error")
+      console.log("error");
+      this.router.navigate(['/error']);
     })
 
   }

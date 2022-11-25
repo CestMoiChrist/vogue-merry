@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: 'single-recette',
     loadChildren: () => import('./single-recette/single-recette.module').then( m => m.SingleRecettePageModule)
+  },  {
+    path: 'error',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule)
   },
+
 
 ];
 
