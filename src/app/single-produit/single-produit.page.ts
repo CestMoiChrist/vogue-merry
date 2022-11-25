@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController, ToastOptions } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { ToastOptions } from '@ionic/angular';
+import { panier } from '../models/panier';
+import { Produit } from '../models/produit';
+
 
 @Component({
   selector: 'app-single-produit',
@@ -24,7 +26,7 @@ export class SingleProduitPage implements OnInit {
   }
 
 
-  constructor(private route: ActivatedRoute, private router: Router, private storage: Storage, private toast: ToastController) { }
+  constructor(private route: ActivatedRoute, private router: Router, public storage: Storage, private toast: ToastController) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -34,22 +36,55 @@ export class SingleProduitPage implements OnInit {
       }
     });
   }
-
-  addToCart(): void {
-    this.storage.create();
-    this.storage.set("produit", "Test")
-      .then(value => alert("La valeur est " + value))
-      .catch(err => console.log(err));
-  }
-  getCartElement(): void {
-    this.storage.get("test")
-      .catch(err => console.log(err))
-      .then(value => ("La valeur est " + value))
+  addToCart(produit: Produit): void {
+    var added: boolean = false;
+    if (this.storage != null) {
+      this.storage.create();
+    }
+    this.storage.get("cart").then((data: panier[]) => {
+      console.log(" 1er " + data)
+      if (data === null) {
+        data = [];
+        data.push({
+          item: produit,
+          qty: 1,
+          amount: produit.price
+        })
+        console.log(data)
+      }
+      else {
+        //si le panier est vide
+        console.log("on arrive ici")
+        for (let i = 0; i < data.length; i++) {
+          const element: panier = data[i];
+          if (produit.id === element.item.id) {
+            element.qty += 1;
+            element.amount += produit.price;
+            added = true;
+          }
+        }
+        if (!added) {
+          // le panier n'est pas vide et ne contient pas d'article
+          data.push({
+            item: produit,
+            qty: 1,
+            amount: produit.price
+          })
+        }
+      }
+      this.storage.set("cart", data)
+        .then(
+          this.presentToast
+        )
+        .catch(err => {
+          console.log("Erreur", err);
+        })
+    })
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toast.create({
-      message: "Les alertes fonctionnent",
+      message: "Votre produit a été mis à jour",
       duration: 1500,
       position: position,
       // color?: "Blue",

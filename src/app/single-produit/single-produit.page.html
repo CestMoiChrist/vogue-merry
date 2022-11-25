@@ -1,14 +1,13 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Le bateau de Thibault</ion-title>
-  </ion-toolbar>
+  <app-header></app-header>
 </ion-header>
 
-<ion-card style="margin: auto auto;height: 80%;width: 80%;" (click)="presentToast('bottom')">
+
+<ion-card style="margin: auto auto;height: 80%;width: 80%;">
     <img [src]="produit.owner" style="height: 50%;" />
     <h3> {{ produit.name }} </h3>
 
-    <button (click)="addToCart()" ion-button round large>
+    <button (click)="addToCart(produit)" (click)="presentToast('bottom')" ion-button round large>
       <ion-icon name="cart"></ion-icon>&nbsp;
       Ajouter au panier
     </button>
