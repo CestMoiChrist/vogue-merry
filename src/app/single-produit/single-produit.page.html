@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-card style="margin: auto auto;height: 80%;width: 80%;">
+<ion-card style="margin: auto auto;height: 80%;width: 80%;" (click)="presentToast('bottom')">
     <img [src]="produit.owner" style="height: 50%;" />
     <h3> {{ produit.name }} </h3>
 

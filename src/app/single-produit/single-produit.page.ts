@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Storage } from '@ionic/storage-angular';
+import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { ToastOptions } from '@ionic/angular';
 
 @Component({
   selector: 'app-single-produit',
@@ -21,7 +23,8 @@ export class SingleProduitPage implements OnInit {
     owner: string;
   }
 
-  constructor(private route: ActivatedRoute, private storage: Storage, private router: Router) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private storage: Storage, private toast: ToastController) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -42,6 +45,17 @@ export class SingleProduitPage implements OnInit {
     this.storage.get("test")
       .catch(err => console.log(err))
       .then(value => ("La valeur est " + value))
+  }
+
+  async presentToast(position: 'top' | 'middle' | 'bottom') {
+    const toast = await this.toast.create({
+      message: "Les alertes fonctionnent",
+      duration: 1500,
+      position: position,
+      // color?: "Blue",
+    })
+    await toast.present();
+    console.log(toast)
   }
 
 }
