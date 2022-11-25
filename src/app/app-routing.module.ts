@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: 'single-recette',
     loadChildren: () => import('./single-recette/single-recette.module').then( m => m.SingleRecettePageModule)
+  },  {
+    path: 'panier',
+    loadChildren: () => import('./panier/panier.module').then( m => m.PanierPageModule)
   },
+
 
 ];
 

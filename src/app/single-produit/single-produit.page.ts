@@ -41,13 +41,14 @@ export class SingleProduitPage implements OnInit {
     if (this.storage != null) {
       this.storage.create();
     }
-    this.storage.get("cart").then((data: panier[]) => {
+    this.storage.get("Cart").then((data: panier[]) => {
       if (data === null || data.length === 0) {
         data = [];
         data.push({
           item: produit,
           qty: 1,
-          amount: produit.price
+          amount: produit.price,
+          discount : produit.discount
         })
         console.log(data)
       }
@@ -58,6 +59,7 @@ export class SingleProduitPage implements OnInit {
           if (produit.id === element.item.id) {
             element.qty += 1;
             element.amount += produit.price;
+            element.discount += produit.discount;
             added = true;
           }
         }
@@ -66,11 +68,12 @@ export class SingleProduitPage implements OnInit {
           data.push({
             item: produit,
             qty: 1,
-            amount: produit.price
+            amount: produit.price,
+            discount : produit.discount
           })
         }
       }
-      this.storage.set("cart", data)
+      this.storage.set("Cart", data)
         .then(
           this.presentToast
         )
