@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { Produit } from '../models/produit';
-import { ToastController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
-import { ToastOptions } from '@ionic/angular';
 import { getRenderingRef } from 'ionicons/dist/types/stencil-public-runtime';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -18,7 +16,7 @@ export class ListeProduitsPage implements OnInit {
   handlerMessage = '';
   roleMessage = '';
 
-  constructor(private router: Router, private route: ActivatedRoute, private toast: ToastController) {
+  constructor(private router: Router, private route: ActivatedRoute, private toast:ToastController) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()!.extras.state) {
         this.produits = this.router.getCurrentNavigation()!.extras.state!['produits'];
@@ -32,16 +30,17 @@ export class ListeProduitsPage implements OnInit {
   }
 
   onLoadProduit(produit: {
-    id:            string;
-    name:         string;
-    category:      number;
-    price:         number;
-    unit:          number;
-    availability:  boolean;
-    sale:          boolean;
-    discount:      number;
-    comments:      string;
-    owner:         string;}){
+    id: string;
+    name: string;
+    category: number;
+    price: number;
+    unit: number;
+    availability: boolean;
+    sale: boolean;
+    discount: number;
+    comments: string;
+    owner: string;
+  }) {
     let navigationExtras: NavigationExtras = {
       state: {
         produit: produit
