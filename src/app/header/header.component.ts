@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -8,8 +9,7 @@ import { Storage } from '@ionic/storage';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public storage: Storage) { }
-
+  constructor(private router:Router, public storage: Storage) { }
   ngOnInit() { }
 
   getCartElement(): void {
@@ -19,6 +19,8 @@ export class HeaderComponent implements OnInit {
 
   }
 
-
+  onGoToHome(){
+    this.router.navigate(['/home'])
+  }
 
 }
