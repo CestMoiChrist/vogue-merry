@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { Produit } from '../models/produit';
+import { ToastController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
+import { ToastOptions } from '@ionic/angular';
+import { getRenderingRef } from 'ionicons/dist/types/stencil-public-runtime';
 
 
 @Component({
@@ -12,7 +16,7 @@ export class ListeProduitsPage implements OnInit {
 
   produits: Produit[] = [];
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private toast: ToastController) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()!.extras.state) {
         this.produits = this.router.getCurrentNavigation()!.extras.state!['produits'];
@@ -42,6 +46,17 @@ export class ListeProduitsPage implements OnInit {
       }
     };
     this.router.navigate(['single-produit'], navigationExtras);
+  }
+
+  async presentToast(position:'top' | 'middle' | 'bottom'){
+    const toast = await this.toast.create({
+      message: "Les alertes fonctionnent",
+      duration: 1500,
+      position: position,
+      // color?: "Blue",
+    })
+    await toast.present();
+    console.log(toast)
   }
 
 
