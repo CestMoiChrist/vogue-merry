@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mon panier</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content Padding>
+  <ion-list>
+    <button ion-item *ngFor="let article of cart">
+      <ion-thumbnail item-left>
+        <img [src]="article.item.owner">
+      </ion-thumbnail>
+      <h2>{{ article.item.name }}</h2>
+      <p>
+        <ion-badge color="secondary">{{ article.qty }}</ion-badge> x {{ article.item.price }}
+      </p>
+      <p> Vous économisez : {{ article.discount }} euros </p> 
+      <p> Total : {{ (article.qty * article.item.price) - article.discount }}</p>
+      <button ion-button item-right clear color="danger">
+        <ion-icon name="remove"></ion-icon>
+      </button>
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <button ion-button block (click)="closeModal()">Fermer</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button block outline>Panier : {{ total }}</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -49,16 +49,16 @@ export class ListeProduitsPage implements OnInit {
     this.router.navigate(['single-produit'], navigationExtras);
   }
 
-  async presentToast(position:'top' | 'middle' | 'bottom'){
-    const toast = await this.toast.create({
-      message: "Les alertes changent",
-      duration: 1500,
-      position: position,
-      // color?: "Blue",
-    })
-    await toast.present();
-    console.log(toast)
-  }
+  // async presentToast(position:'top' | 'middle' | 'bottom'){
+  //   const toast = await this.toast.create({
+  //     message: "Les alertes changent",
+  //     duration: 1500,
+  //     position: position,
+  //     // color?: "Blue",
+  //   })
+  //   await toast.present();
+  //   console.log(toast)
+  // }
 
   async deleteToast(position:'top' | 'middle' | 'bottom'){
     console.log("deleteToast");

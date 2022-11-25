@@ -6,11 +6,11 @@
 
 <ion-content padding>
   <ion-card *ngFor="let produit of produits" style="height:10%;padding:3%;vertical-align: middle;">
-    <div (click)="presentToast('bottom');onLoadProduit(produit);" style="height: 100%;width: 80%;display: inline;">
+    <div (click)="onLoadProduit(produit)" style="height: 100%;width: 80%;display: inline;">
       <img [src]="produit.owner" style="width:17%;height:100%;float: left;margin:2%;border-radius: 50%;">
-      <h4 style="float:left;" (click)="presentToast('bottom');" > {{ produit.name }} </h4>
+      <h4 style="float:left;" > {{ produit.name }} </h4>
     </div>
-        <ion-icon name="search-outline" (click)="presentToast('bottom');onLoadProduit(produit);" style="float:right;display: inline;"></ion-icon>
+        <ion-icon name="search-outline" (click)="onLoadProduit(produit)" style="float:right;display: inline;"></ion-icon>
         <ion-icon name="trash-outline" (click)="deleteToast('bottom')" style="float:right;display: inline;"></ion-icon>
         <p>{{ handlerMessage }}</p>
         <p>{{ roleMessage }}</p>
