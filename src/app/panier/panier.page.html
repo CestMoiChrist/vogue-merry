@@ -15,7 +15,6 @@
         <ion-badge color="secondary">{{ article.qty }}</ion-badge> x {{ article.item.price }}
       </p>
       <p> Vous économisez : {{ article.discount }} euros </p> 
-      <p> Livraison : </p>
       <p> Total : {{ (article.qty * article.item.price) - article.discount }}</p>
       <button ion-button item-right clear color="danger">
         <ion-icon name="remove"></ion-icon>
