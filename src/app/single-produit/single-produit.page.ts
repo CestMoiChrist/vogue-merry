@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { ToastOptions } from '@ionic/angular';
+import { panier } from '../models/panier';
+import { Produit } from '../models/produit';
+
 
 @Component({
   selector: 'app-single-produit',
@@ -24,7 +26,7 @@ export class SingleProduitPage implements OnInit {
   }
 
 
-  constructor(private route: ActivatedRoute, private router: Router, private storage: Storage, private toast: ToastController) { }
+  constructor(private route: ActivatedRoute, private router: Router, public storage: Storage, private toast: ToastController) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
@@ -35,16 +37,39 @@ export class SingleProduitPage implements OnInit {
     });
   }
 
-  addToCart(): void {
+  addToCart(produit: Produit): void {
+    let added: boolean = false;
     this.storage.create();
-    this.storage.set("produit", "Test")
-      .then(value => alert("La valeur est " + value))
-      .catch(err => console.log(err));
-  }
-  getCartElement(): void {
-    this.storage.get("test")
-      .catch(err => console.log(err))
-      .then(value => ("La valeur est " + value))
+    this.storage.get("Cart").then((data: panier[]) => {
+      if (data === null || data.length === 0) {
+        data = [];
+        data.push({
+          item: produit,
+          qty: 1,
+          amount: produit.price
+        })
+      }
+      else {
+        //si le panier est vide
+        for (let i = 0; i < data.length; i++) {
+          const element: panier = data[i];
+          if (produit.id === element.item.id) {
+            element.qty += 1;
+            element.amount += produit.price;
+            added = true;
+          }
+        }
+        if (!added) {
+          // le panier n'est pas vide et ne contient pas d'article
+          data.push({
+            item: produit,
+            qty: 1,
+            amount: produit.price
+          })
+        }
+      }
+      this.storage.set("cart", data)
+    })
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom') {
