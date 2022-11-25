@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ToastController, ToastOptions } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { panier } from '../models/panier';
 import { Produit } from '../models/produit';
@@ -36,21 +36,25 @@ export class SingleProduitPage implements OnInit {
       }
     });
   }
-
   addToCart(produit: Produit): void {
-    let added: boolean = false;
-    this.storage.create();
-    this.storage.get("Cart").then((data: panier[]) => {
-      if (data === null || data.length === 0) {
+    var added: boolean = false;
+    if (this.storage != null) {
+      this.storage.create();
+    }
+    this.storage.get("cart").then((data: panier[]) => {
+      console.log(" 1er " + data)
+      if (data === null) {
         data = [];
         data.push({
           item: produit,
           qty: 1,
           amount: produit.price
         })
+        console.log(data)
       }
       else {
         //si le panier est vide
+        console.log("on arrive ici")
         for (let i = 0; i < data.length; i++) {
           const element: panier = data[i];
           if (produit.id === element.item.id) {
@@ -69,12 +73,18 @@ export class SingleProduitPage implements OnInit {
         }
       }
       this.storage.set("cart", data)
+        .then(
+          this.presentToast
+        )
+        .catch(err => {
+          console.log("Erreur", err);
+        })
     })
   }
 
   async presentToast(position: 'top' | 'middle' | 'bottom') {
     const toast = await this.toast.create({
-      message: "Les alertes fonctionnent",
+      message: "Votre produit a été mis à jour",
       duration: 1500,
       position: position,
       // color?: "Blue",
