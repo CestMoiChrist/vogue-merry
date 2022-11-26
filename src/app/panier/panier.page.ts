@@ -3,7 +3,6 @@ import { panier } from '../models/panier';
 import { Storage } from '@ionic/storage-angular';
 import { AlertController, AlertOptions, ModalController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { timeEnd } from 'console';
 
 
 
