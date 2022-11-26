@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { Produit } from '../models/produit';
-import { getRenderingRef } from 'ionicons/dist/types/stencil-public-runtime';
 import { ToastController } from '@ionic/angular';
 
 

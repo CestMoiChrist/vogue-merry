@@ -6,7 +6,7 @@
 
 <ion-content Padding>
   <ion-list>
-    <button ion-item *ngFor="let article of cart">
+    <button ion-item *ngFor="let article of cart; let i = index">
       <ion-thumbnail item-left>
         <img [src]="article.item.owner">
       </ion-thumbnail>
@@ -16,7 +16,7 @@
       </p>
       <p> Vous économisez : {{ article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }} </p> 
       <p> Total : {{ (article.qty * article.item.price) - article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }}</p>
-      <button ion-button item-right clear color="danger">
+      <button (click)="deleteToast(article,i)" ion-button item-right clear color="danger">
         <ion-icon name="remove-circle"></ion-icon>
       </button>
     </button>
