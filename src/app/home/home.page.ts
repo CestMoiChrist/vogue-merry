@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  urliconbato: string = "../assets/icon/bateau.png"
+  urliconbato: string = '../assets/icon/bateau.png';
 
   constructor(private router: Router) { }
 
@@ -17,18 +16,18 @@ export class HomePage {
   }
 
   onGotoCategorieProduits() {
-    this.router.navigate(['/categorie-produit'])
+    this.router.navigate(['/categorie-produit']);
   }
 
   onGoToBateaux() {
-    this.router.navigate(['/bateaux'])
-  }
-  
-  onGoToRestaurants() {
-    this.router.navigate(['/restaurants'])
+    this.router.navigate(['/bateaux']);
   }
 
-  onGotoRecette(){
-    this.router.navigate(['/list-recette'])
+  onGoToRestaurants() {
+    this.router.navigate(['/restaurants']);
+  }
+
+  onGotoRecette() {
+    this.router.navigate(['/list-recette']);
   }
 }
