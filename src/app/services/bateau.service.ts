@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Bateau } from '../models/bateau';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BateauService {
+  bateauxList!: Bateau[];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllBateau(){
-    return this.http.get<Bateau[]>('assets/data/bateaux.json'); 
+  getAllBateaux() {
+    return this.http.get<Bateau[]>('assets/data/bateaux.json');
   }
 }

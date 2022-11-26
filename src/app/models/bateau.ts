@@ -1,7 +1,7 @@
 export class Bateau {
-  name!: string;
+  name: string;
   subname!: string;
-  description!: string;
+  description!: string[];
   image!: string;
 
   constructor(name: string) {
