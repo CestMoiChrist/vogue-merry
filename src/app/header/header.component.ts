@@ -17,18 +17,14 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() { }
 
-// Jessaye de créer un modal pour créer la page panier seulement s'il n'existe pas mais je n'y arrive pas
-//   async onGotoPanier(){
-//     const modal = await this.modal.create({
-//       component : PanierPage,
-//       breakpoints: [0, 0.3, 0.5, 0.8],
-//       initialBreakpoint: 0.5
-//     });
-//     modal.present;
-// }
-onGotoPanier(){
-  this.router.navigate(['/panier']);
+
+  async onGotoPanier(){
+    const modal = await this.modal.create({
+      component : PanierPage,
+    });
+     return modal.present();
 }
+
 
 
 onGoToHome(){

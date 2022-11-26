@@ -12,12 +12,12 @@
       </ion-thumbnail>
       <h2>{{ article.item.name }}</h2>
       <p>
-        <ion-badge color="secondary">{{ article.qty }}</ion-badge> x {{ article.item.price }}
+        <ion-badge color="secondary">{{ article.qty }}</ion-badge> x {{ article.item.price | currency: 'EUR':'symbol':undefined:'fr-FR' }}
       </p>
-      <p> Vous économisez : {{ article.discount }} euros </p> 
-      <p> Total : {{ (article.qty * article.item.price) - article.discount }}</p>
+      <p> Vous économisez : {{ article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }} </p> 
+      <p> Total : {{ (article.qty * article.item.price) - article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }}</p>
       <button ion-button item-right clear color="danger">
-        <ion-icon name="remove"></ion-icon>
+        <ion-icon name="remove-circle"></ion-icon>
       </button>
     </button>
   </ion-list>
@@ -29,7 +29,7 @@
       <button ion-button block (click)="closeModal()">Fermer</button>
     </ion-col>
     <ion-col>
-      <button ion-button block outline>Panier : {{ total }}</button>
+      <button ion-button block outline>Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</button>
     </ion-col>
   </ion-row>
 </ion-footer>

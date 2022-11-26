@@ -83,11 +83,11 @@ export class SingleProduitPage implements OnInit {
     })
   }
 
-  async presentToast(position: 'top' | 'middle' | 'bottom') {
+  async presentToast() {
     const toast = await this.toast.create({
       message: "Votre produit a été mis à jour",
       duration: 1500,
-      position: position,
+      position: "bottom",
       // color?: "Blue",
     })
     await toast.present();

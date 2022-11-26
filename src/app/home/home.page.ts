@@ -9,53 +9,10 @@ import { NavigationExtras, Router } from '@angular/router';
 export class HomePage {
   urliconbato: string = '../assets/icon/bateau.png';
 
-  constructor(private router: Router) {}
-
-  onLoadProduit(produit: {
-    name: string;
-    description: string[];
-    isOn: boolean;
-  }) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        produit: produit,
-      },
-    };
-    this.router.navigate(['produit'], navigationExtras);
-  }
-
-  onLoadRestaurant(restaurant: {
-    name: string;
-    description: string[];
-    isOn: boolean;
-  }) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        restaurant: restaurant,
-      },
-    };
-    this.router.navigate(['restaurant'], navigationExtras);
-  }
-
-  onLoadRecette(recette: {
-    name: string;
-    description: string[];
-    isOn: boolean;
-  }) {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        recette: recette,
-      },
-    };
-    this.router.navigate(['recette'], navigationExtras);
-  }
+  constructor(private router: Router) { }
 
   onGotoContact() {
-    this.router.navigate(['/contact']);
-  }
-
-  onGotoListeProduits() {
-    this.router.navigate(['/liste-produits']);
+    this.router.navigate(['/contact'])
   }
 
   onGotoCategorieProduits() {
