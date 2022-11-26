@@ -1,27 +1,30 @@
-<app-header></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nos bateaux partenaires</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding>
-  <h1 style="text-align: center;"><strong>Nos bateaux partenaires</strong></h1>
-
-  <!-- Rendre dynamique les informations -->
-  <div style="margin:5%;">
-    <p>Tout les eaux mènent à Thibault.<br>
-    06.63.99.99.78<br>
-    lebateaudethibault@gmail.com<br>
-    www.facebook.com/lebateaudethibault</p>
+  <div style="margin: 5%">
+    <p>
+      Tout les eaux mènent à Thibault.<br />
+      06.63.99.99.78<br />
+      lebateaudethibault@gmail.com<br />
+      <a href="https://www.facebook.com/lebateaudethibault"
+        >www.facebook.com/lebateaudethibault</a
+      >
+    </p>
   </div>
+  <ion-card
+    ion-item
+    *ngFor="let bateau of bateauxList"
+    (click)="onLoadBateau(bateau)"
+  >
+    <img src="{{bateau.image}}" />
+    <ion-card-header>
+      <ion-card-title>{{bateau.name}}</ion-card-title>
+    </ion-card-header>
 
-    <ion-card style="width:100%;position:absolute;bottom:0;">
-      <ion-card
-        ion-item
-        *ngFor="let bateau of bateauxList"
-        (click)="onLoadBateau(bateau)" style="height:10%;padding:3%;vertical-align: middle;">
-          <ion-item>
-            <ion-thumbnail slot="start">
-              <img src="{{bateau.image}}" style="height:100%;float: left;margin:2%;border-radius: 50%;"/>
-            </ion-thumbnail>
-            <ion-label>{{bateau.name}}</ion-label>
-          </ion-item> 
-      </ion-card>
-    </ion-card>
+    <!-- <ion-card-content> {{bateau.description}} </ion-card-content> -->
+  </ion-card>
 </ion-content>
