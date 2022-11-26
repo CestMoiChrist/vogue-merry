@@ -5,6 +5,8 @@ import { ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 
+
+
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.page.html',

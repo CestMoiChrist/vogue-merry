@@ -61,6 +61,10 @@ export class CategorieProduitPage implements OnInit {
       res = this.produitsCrustace
       console.log("check" + res)
     }
+    if (choixCategorie == "3") {
+      res = this.produitsPromotion
+      console.log("check" + res)
+    }
     let navigationExtras: NavigationExtras = {
 
       state: {
