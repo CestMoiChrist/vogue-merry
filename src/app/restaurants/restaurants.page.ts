@@ -10,7 +10,7 @@ import { RestaurantService } from '../services/restaurant.service';
 })
 export class RestaurantsPage implements OnInit {
 
-  restaurantsList!: Restaurant[];
+  restaurantsList: Restaurant[] = [];
 
 
   constructor(private router:Router, private restaurantService: RestaurantService) { }
