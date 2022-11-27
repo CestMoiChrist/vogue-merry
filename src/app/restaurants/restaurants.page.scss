@@ -21,11 +21,16 @@ ion-content {
     text-align: center;
     justify-content: left;
     background-color: transparent;
+    padding: 5%;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
   }
 
   ion-button {
     width: 47%;
     display: inline-block;
+    height: 25%;
   }
   ion-back-button{
     color: white !important;
