@@ -12,6 +12,7 @@ import { Produit } from '../models/produit';
   styleUrls: ['./single-produit.page.scss'],
 })
 export class SingleProduitPage implements OnInit {
+
   produit!: {
     id: string;
     name: string;
@@ -28,7 +29,7 @@ export class SingleProduitPage implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, public storage: Storage, private toast: ToastController) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()!.extras.state) {
         this.produit = this.router.getCurrentNavigation()!.extras.state!['produit'];
@@ -36,6 +37,14 @@ export class SingleProduitPage implements OnInit {
       }
     });
   }
+
+  // obtenirJour() : void {
+  //   const currentDate = new Date();
+  //   if(currentDate.getDay() === 6){
+  //     dimanche = "ca marche";
+  //   }
+  // }
+
   addToCart(produit: Produit): void {
     var added: boolean = false;
     if (this.storage != null) {
@@ -95,3 +104,7 @@ export class SingleProduitPage implements OnInit {
   }
 
 }
+function dayValues(arg0: number) {
+  throw new Error('Function not implemented.');
+}
+

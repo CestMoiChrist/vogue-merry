@@ -29,7 +29,7 @@
       <button ion-button block (click)="closeModal()">Fermer</button>
     </ion-col>
     <ion-col>
-      <button ion-button block outline>Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</button>
+      <button ion-button block outline (click)="onGotoCommande()">Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</button>
     </ion-col>
   </ion-row>
 </ion-footer>
