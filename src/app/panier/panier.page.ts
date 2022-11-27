@@ -3,6 +3,7 @@ import { panier } from '../models/panier';
 import { Storage } from '@ionic/storage-angular';
 import { AlertController, AlertOptions, ModalController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { CommandePage } from '../commande/commande.page';
 
 
 
@@ -81,4 +82,13 @@ export class PanierPage implements OnInit {
     })
     await toast.present();
   }
+
+  async onGotoCommande(){
+    const modal = await this.modalCtrl.create({
+      component : CommandePage,
+      componentProps: {total : this.total},
+      cssClass: 'transparent-modal'
+    });
+     return modal.present();
+}
 }
