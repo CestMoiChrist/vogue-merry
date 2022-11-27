@@ -2,12 +2,15 @@
   <ion-toolbar>
     <ion-back-button slot="start" mode="ios"></ion-back-button>
     <ion-title>{{ produit.name }}</ion-title>
+    <app-header></app-header>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-card style="margin: auto auto; height: 80%; width: 80%">
   <img [src]="produit.owner" style="height: 50%" />
 </ion-card>
+
 
 <ion-footer>
   <ion-row>
