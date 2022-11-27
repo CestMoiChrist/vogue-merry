@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <ion-back-button slot="start" mode="ios"></ion-back-button>
     <ion-title>{{bateau.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,7 +10,7 @@
   <ion-card-header>
     <ion-card-subtitle>{{bateau.subname}}</ion-card-subtitle>
   </ion-card-header>
-  <ion-card-content class="info">
+  <ion-card-content>
     <p *ngFor="let line of bateau.description">{{ line }}</p>
   </ion-card-content>
 </ion-card>
