@@ -1,8 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start" mode="ios"></ion-back-button>
+    <ion-title>Restaurants partenaires</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content padding>
-  <h2>Restaurants partenaires</h2>
-  <p>Tous les restaurants partenaires avec le bateau de Thibault<br>06.63.99.99.78<br>lebateaudethibault@gmail.com<br><a href="https://www.facebook.com/lebateaudethibault" target="_blank">https://www.facebook.com/lebateaudethibault</a></p>
+  <p>
+    Tous les restaurants partenaires avec le bateau de Thibault<br />06.63.99.99.78<br />lebateaudethibault@gmail.com<br /><a
+      href="https://www.facebook.com/lebateaudethibault"
+      target="_blank"
+      >https://www.facebook.com/lebateaudethibault</a
+    >
+  </p>
 
   <ion-card>
-      <ion-button ion-item *ngFor="let restaurant of restaurantsList" (click) = "onLoadRestaurant(restaurant)">{{restaurant.nom}}</ion-button>
+    <ion-button
+      ion-item
+      *ngFor="let restaurant of restaurantsList"
+      (click)="onLoadRestaurant(restaurant)"
+      >{{restaurant.nom}}</ion-button
+    >
   </ion-card>
 </ion-content>
