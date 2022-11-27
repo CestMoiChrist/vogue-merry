@@ -1,36 +1,52 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Vogue Merry
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
 <app-header></app-header>
 
 <ion-content padding>
-
-  <img src="../assets/img/acceuil.gif">
-    <ion-card style="text-align: center; justify-content: left;padding:5%;position:absolute; bottom:0;height: 50%;">
-      <ion-button (click)="onGotoCategorieProduits()" style="width:94.3%;margin:3%;height: 25%;">
-      <ion-icon  slot="start" name="fish-outline" float-left></ion-icon>
-        Produits et promotions
-      </ion-button>
-      <ion-button (click)="onGoToRestaurants()" style="width:47%;display:inline-block;height: 25%;;">
+  <img src="../assets/img/acceuil.gif" />
+  <ion-card
+    style="
+      text-align: center;
+      justify-content: left;
+      padding: 5%;
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+    "
+  >
+    <ion-button
+      (click)="onGotoCategorieProduits()"
+      style="width: 94.3%; margin: 3%; height: 25%"
+    >
+      <ion-icon slot="start" name="fish-outline" float-left></ion-icon>
+      Produits et promotions
+    </ion-button>
+    <ion-button
+      (click)="onGoToRestaurants()"
+      style="width: 47%; display: inline-block; height: 25%"
+    >
       <ion-icon slot="start" name="restaurant-outline"></ion-icon>
-        Restaurants
-      </ion-button>
-      <ion-button (click)="onGoToBateaux()" style="width:47%;display:inline-block;height: 25%;"> 
-      <ion-icon  slot="start" name="boat-outline"></ion-icon>
-        Bateaux
-      </ion-button>
-      <ion-button (click)="onGotoRecette()" style="width:47%;display:inline-block;height: 25%;">
+      Restaurants
+    </ion-button>
+    <ion-button
+      (click)="onGoToBateaux()"
+      style="width: 47%; display: inline-block; height: 25%"
+    >
+      <ion-icon slot="start" name="boat-outline"></ion-icon>
+      Bateaux
+    </ion-button>
+    <ion-button
+      (click)="onGotoRecette()"
+      style="width: 47%; display: inline-block; height: 25%"
+    >
       <!-- <img src="../assets/icon/recette.png" style="width:9%; height:38%;"> -->
-      <ion-icon  slot="start" name="fast-food-outline"></ion-icon>
-        Recettes
-      </ion-button>
-      <ion-button (click)="onGotoContact()" style="width:47%;display:inline-block;height: 25%;"> 
-      <ion-icon  slot="start" name="call-outline"></ion-icon>
-        Contact
-      </ion-button>
-    </ion-card>
+      <ion-icon slot="start" name="fast-food-outline"></ion-icon>
+      Recettes
+    </ion-button>
+    <ion-button
+      (click)="onGotoContact()"
+      style="width: 47%; display: inline-block; height: 25%"
+    >
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      Contact
+    </ion-button>
+  </ion-card>
 </ion-content>

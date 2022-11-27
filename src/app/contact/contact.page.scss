@@ -1,4 +1,24 @@
-img {
-    width : 50%;
-    height : 50%;
+h2 {
+    color: white !important;
+    text-align: center;
+    padding-top: 100px;
+  }
+  
+  
+  p {
+    text-align: center;
+    //padding-top: 100px;
+  }
+
+  img {
+    width : 300px;
+    height : 302px;
+    display: block;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  ion-back-button{
+    color: white !important;
     }

@@ -1,20 +1,24 @@
 <ion-header>
   <ion-toolbar>
+    <ion-back-button slot="start" mode="ios"></ion-back-button>
+
     <ion-title>Liste des recettes proposées</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor= "let recette of recetteList">
-  <ion-card-content (click)="onLoadRecette(recette)">
-    <h2 style="float: left">{{recette.name}}</h2>
-    <img [src]="recette.img" style="float: right;display: inline; height:80%;width:30%;">
-  </ion-card-content>
-  <!-- <ion-card-content>{{ recette.description }}
+  <ion-card *ngFor="let recette of recetteList">
+    <ion-card-content (click)="onLoadRecette(recette)">
+      <h2 style="float: left">{{recette.name}}</h2>
+      <img
+        [src]="recette.img"
+        style="float: right; display: inline; height: 80%; width: 30%"
+      />
+    </ion-card-content>
+    <!-- <ion-card-content>{{ recette.description }}
     
   </ion-card-content> -->
   </ion-card>
-  
-  <button ion-button > 
-    </button>
+
+  <button ion-button></button>
 </ion-content>
