@@ -8,21 +8,24 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SingleRecettePage implements OnInit {
   recette!: {
-    id:            string;
-    name:          string;
-    img:           string;
-    description:   string;
-   }
+    id: string;
+    name: string;
+    img: string;
+    description: string;
+    preparation: string;
+    prix: string;
+    ingredients: string;
+  };
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      if(this.router.getCurrentNavigation()!.extras.state){
-        this.recette = this.router.getCurrentNavigation()!.extras.state!['recette'];
+    this.route.queryParams.subscribe((params) => {
+      if (this.router.getCurrentNavigation()!.extras.state) {
+        this.recette =
+          this.router.getCurrentNavigation()!.extras.state!['recette'];
         console.log(this.recette);
       }
     });
   }
-
 }
