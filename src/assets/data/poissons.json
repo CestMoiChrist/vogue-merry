@@ -1,7 +1,7 @@
 [
     {
         "id": 12,
-        "name": "poissons",
+        "name": "Bar",
         "category": 0,
         "price": 10.0,
         "unit": "kg",
@@ -9,11 +9,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Pêche à la corde",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 9,
-        "name": "Araignées",
+        "name": "Lotte",
         "category": 0,
         "price": 7.0,
         "unit": "kg",
@@ -21,11 +21,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Hors saison,  pêche aux casiers",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/lotte.jfif"
     },
     {
         "id": 3,
-        "name": "Bar de ligne",
+        "name": "Nemo",
         "category": 0,
         "price": 30.0,
         "unit": "kg",
@@ -33,11 +33,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Plus de 1.5kg le poisson",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/nemo.jfif"
     },
     {
         "id": 2,
-        "name": "Bar de ligne portion",
+        "name": "Sardine",
         "category": 0,
         "price": 10.0,
         "unit": "pièce",
@@ -45,11 +45,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Environ 550-700g la pièce",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/sardine.jfif"
     },
     {
         "id": 10,
-        "name": "Bouquets cuits",
+        "name": "Saumon",
         "category": 0,
         "price": 8.0,
         "unit": "100g",
@@ -57,11 +57,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Hors saison, pêche à l'épuisette",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/saumon.jfif"
     },
     {
         "id": 1,
-        "name": "Filet Bar de ligne",
+        "name": "Sole",
         "category": 0,
         "price": 7.0,
         "unit": "2 filets",
@@ -69,7 +69,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "environ 300g",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/sole.jfif"
     },
     {
         "id": 5,
@@ -81,11 +81,11 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Pêche à la corde",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 7,
-        "name": "Huitres N°2 St Vaast",
+        "name": "Saumon sauvage",
         "category": 0,
         "price": 9.5,
         "unit": "Dz",
@@ -93,7 +93,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/saumon.jfif"
     },
     {
         "id": 8,
@@ -105,7 +105,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 13,
@@ -117,7 +117,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Médaille d'or Salon Agriculture",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 14,
@@ -129,7 +129,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Médaille d'or salon agriculture",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 15,
@@ -141,7 +141,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Médaille d'or salon agriculture",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 16,
@@ -153,7 +153,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 4,
@@ -165,7 +165,7 @@
         "sale": false,
         "discount": 0.0,
         "comments": "Environ 550-700g la portion",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/bar.jfif"
     },
     {
         "id": 6,
@@ -177,6 +177,6 @@
         "sale": true,
         "discount": 5.0,
         "comments": "",
-        "owner": "tig"
+        "owner": "../assets/img/imgpoisson/lotte.jfif"
     }
 ]
