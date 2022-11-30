@@ -1,15 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Mon panier</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
+<!-- <ion-title>Mon panier</ion-title> -->
 
-<ion-content Padding>
-  <ion-list>
-    <button ion-item *ngFor="let article of cart; let i = index">
-      <ion-thumbnail item-left>
+<ion-card *ngFor="let article of cart; let i = index">
+  <ion-card-content>      
         <img [src]="article.item.owner">
-      </ion-thumbnail>
+      
       <h2>{{ article.item.name }}</h2>
       <p>
         <ion-badge color="secondary">{{ article.qty }}</ion-badge> x {{ article.item.price | currency: 'EUR':'symbol':undefined:'fr-FR' }}
@@ -19,17 +14,11 @@
       <button (click)="deleteToast(article,i)" ion-button item-right clear color="danger">
         <ion-icon name="remove-circle"></ion-icon>
       </button>
-    </button>
-  </ion-list>
-</ion-content>
+  </ion-card-content>
+</ion-card>
+  <ion-footer>
+    <ion-button (click)="closeModal()">Fermer</ion-button>
+    <button ion-button block outline (click)="onGotoCommande()">Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</button>
+  </ion-footer>
 
-<ion-footer>
-  <ion-row>
-    <ion-col>
-      <button ion-button block (click)="closeModal()">Fermer</button>
-    </ion-col>
-    <ion-col>
-      <button ion-button block outline (click)="onGotoCommande()">Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</button>
-    </ion-col>
-  </ion-row>
-</ion-footer>
+  

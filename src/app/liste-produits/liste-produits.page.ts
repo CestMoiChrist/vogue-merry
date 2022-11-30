@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { Produit } from '../models/produit';
 import { ToastController } from '@ionic/angular';
+import { panier } from '../models/panier';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -14,8 +16,10 @@ export class ListeProduitsPage implements OnInit {
   produits: Produit[] = [];
   handlerMessage = '';
   roleMessage = '';
+  cart : panier[] = [];
+  total : number = 0;
 
-  constructor(private router: Router, private route: ActivatedRoute, private toast:ToastController) {
+  constructor(private router: Router, private route: ActivatedRoute, private toast:ToastController, public storage: Storage) {
     this.route.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation()!.extras.state) {
         this.produits = this.router.getCurrentNavigation()!.extras.state!['produits'];
@@ -25,6 +29,19 @@ export class ListeProduitsPage implements OnInit {
   }
 
   ngOnInit() {
+    if (this.storage != null) {
+      this.storage.create();
+    }
+    this.storage.get("Cart")
+    .then((data : panier[])=>{
+      this.cart = data;
+      this.cart.forEach((element : panier)=>{
+        this.total += ((element.item.price * element.qty) - element.item.discount)
+      })
+    })
+    .catch(err =>{
+      console.log("Erreur", err);
+    })
 
   }
 
@@ -48,16 +65,17 @@ export class ListeProduitsPage implements OnInit {
     this.router.navigate(['single-produit'], navigationExtras);
   }
 
-  // async presentToast(position:'top' | 'middle' | 'bottom'){
-  //   const toast = await this.toast.create({
-  //     message: "Les alertes changent",
-  //     duration: 1500,
-  //     position: position,
-  //     // color?: "Blue",
-  //   })
-  //   await toast.present();
-  //   console.log(toast)
-  // }
+  async presentToast(position:'top' | 'middle' | 'bottom'){
+    console.log("present toast")
+    const toast = await this.toast.create({
+      message: "Produit ajouté au panier",
+      duration: 1500,
+      position: 'bottom',
+      // color?: "Blue",
+    })
+    await toast.present();
+    console.log(toast)
+  }
 
   async deleteToast(position:'top' | 'middle' | 'bottom'){
     console.log("deleteToast");
@@ -81,11 +99,8 @@ export class ListeProduitsPage implements OnInit {
           }
         }
       ]
-      // color?: "Blue",
     })
     await toast.present();
-    // const { role } = await toast.onDidDismiss();
-    // this.roleMessage = `Dismissed with role: ${role}`;
   }
 
   removeItem(): void{
@@ -94,6 +109,47 @@ export class ListeProduitsPage implements OnInit {
     // this.cartItems.splice(index,1);
     //this.storage.set("cart", this.cartItems)
   }
+
+  addToCart(produit: Produit): void {
+    var added: boolean = false;
+    if (this.storage != null) {
+      this.storage.create();
+    }
+    this.storage.get("Cart").then((data: panier[]) => {
+      if (data === null || data.length === 0) {
+        data = [];
+        data.push({
+          item: produit,
+          qty: 1,
+          amount: produit.price,
+          discount : produit.discount
+        })
+        console.log(data)
+      }
+      else {
+        //s'il y a deja un produit
+        for (let i = 0; i < data.length; i++) {
+          const element: panier = data[i];
+          if (produit.id === element.item.id) {
+            element.qty += 1;
+            element.amount += produit.price;
+            element.discount += produit.discount;
+            added = true;
+          }
+        }
+        if (!added) {
+          data.push({
+            item: produit,
+            qty: 1,
+            amount: produit.price,
+            discount : produit.discount
+          })
+        }
+      }
+      this.storage.set("Cart", data)
+    })
+  }
+
 
 
 }

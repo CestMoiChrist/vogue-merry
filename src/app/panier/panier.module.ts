@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PanierPageRoutingModule } from './panier-routing.module';
-
+import { SharedModule } from '../shared/shared.module';
 import { PanierPage } from './panier.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { PanierPage } from './panier.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    PanierPageRoutingModule
+    PanierPageRoutingModule,
+    SharedModule
   ],
   declarations: [PanierPage]
 })
