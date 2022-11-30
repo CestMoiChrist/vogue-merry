@@ -3,36 +3,54 @@
         "id": 12,
         "name":          "Crabe farci",
         "img":           "../assets/img/imgrecette/crabe.jfif",
-        "description":   "Giga cher - Temps de préparation 1h"
+        "description":   "Giga cher",
+        "preparation":  "1h",
+        "prix": "99€",
+        "ingredients": "Crabe"
     },
     {
         "id": 13,
         "name":          "Sardine grillée",
         "img":           "../assets/img/imgrecette/sardine.jfif",
-        "description":   "Pas cher - Temps de préparation 5 min"
+        "description":   "Pas cher - Temps de préparation 5 min",
+        "preparation":  "5mn",
+        "prix": "4€",
+        "ingredients": "Sardine"
     },
     {
         "id": 15,
         "name":          "Poisson chat fris",
         "img":           "../assets/img/imgrecette/poissonfris.jfif",
-        "description":   "Assez cher - Temps de préparation 25 min"
+        "description":   "Assez cher",
+        "préparation":  "25mn",
+        "prix": "20€",
+        "ingredients": "Poisson chat"
     },
     {
         "id": 15,
         "name":          "Pâte fruits de mer",
         "img":           "../assets/img/imgrecette/pate.jfif",
-        "description":   "Pas cher - Temps de préparation 4 min"
+        "description":   "Pas cher",
+        "preparation":  "4mn",
+        "prix": "8€",
+        "ingredients": "Pâtes et fruits de mer"
     },
     {
         "id": 15,
-        "name":          "Sushi",
+        "name":          "Sushis",
         "img":           "../assets/img/imgrecette/sushi.jfif",
-        "description":   "Pas cher - Temps de préparation 6 min"
+        "description":   "Pas cher",
+        "preparation":  "6mn",
+        "prix": "5€",
+        "ingredients": "Sushis"
     },
     {
         "id": 15,
         "name":          "Encornets",
         "img":           "../assets/img/imgrecette/encornet.jfif",
-        "description":   "Cher - Temps de préparation 15 min"
+        "description":   "Cher",
+        "preparation":  "15mn",
+        "prix": "50€",
+        "ingredients": "Encornets"
     }
 ]
