@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { CommandePageRoutingModule } from './commande-routing.module';
-
+import { SharedModule } from '../shared/shared.module';
 import { CommandePage } from './commande.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { CommandePage } from './commande.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    CommandePageRoutingModule
+    CommandePageRoutingModule,
+    SharedModule
   ],
   declarations: [CommandePage]
 })

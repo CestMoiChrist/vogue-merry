@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { ErrorPageRoutingModule } from './error-routing.module';
-
+import { SharedModule } from '../shared/shared.module';
 import { ErrorPage } from './error.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { ErrorPage } from './error.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ErrorPageRoutingModule
+    ErrorPageRoutingModule,
+    SharedModule,
   ],
   declarations: [ErrorPage]
 })

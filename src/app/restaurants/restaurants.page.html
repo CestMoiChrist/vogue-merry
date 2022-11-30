@@ -1,25 +1,50 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-back-button slot="start" mode="ios"></ion-back-button>
-    <ion-title>Restaurants partenaires</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content padding>
-  <p>
-    Tous les restaurants partenaires avec le bateau de Thibault<br />06.63.99.99.78<br />lebateaudethibault@gmail.com<br /><a
-      href="https://www.facebook.com/lebateaudethibault"
-      target="_blank"
-      >https://www.facebook.com/lebateaudethibault</a
-    >
-  </p>
-
-  <ion-card>
-    <ion-button
-      ion-item
-      *ngFor="let restaurant of restaurantsList"
-      (click)="onLoadRestaurant(restaurant)"
-      >{{restaurant.nom}}</ion-button
-    >
+  <ion-title style="margin: 5%">Restaurants partenaires</ion-title>
+  <div style="margin: 5%">
+    <p>
+      Tous les restaurants partenaires avec le bateau de Thibault<br />06.63.99.99.78<br />lebateaudethibault@gmail.com<br /><a
+        href="https://www.facebook.com/lebateaudethibault"
+        target="_blank"
+        >https://www.facebook.com/lebateaudethibault</a
+      >
+    </p>
+  </div>
+  
+  <ion-card *ngFor="let restaurant of restaurantsList">
+    <img [src]="restaurant.image">
+  <ion-card-header>
+    <ion-card-title ion-item (click)="onLoadRestaurant(restaurant)" >{{restaurant.nom}}</ion-card-title>
+  </ion-card-header>
   </ion-card>
 </ion-content>
+
+
+<!-- <app-header></app-header> -->
+
+<!-- <ion-content padding>
+  <div style="margin: 5%">
+    <p>
+      Tout les eaux mènent à Thibault.<br />
+      06.63.99.99.78<br />
+      lebateaudethibault@gmail.com<br />
+      <a href="https://www.facebook.com/lebateaudethibault"
+        >www.facebook.com/lebateaudethibault</a
+      >
+    </p>
+  </div>
+  <ion-card
+    ion-item
+    *ngFor="let bateau of bateauxList"
+    (click)="onLoadBateau(bateau)"
+  >
+    <img src="{{bateau.image}}" />
+    <ion-card-header>
+      <ion-card-title>{{bateau.name}}</ion-card-title>
+    </ion-card-header>
+
+    
+ <ion-card-content> {{bateau.description}} </ion-card-content>
+  </ion-card>
+</ion-content> -->
+

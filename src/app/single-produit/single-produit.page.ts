@@ -46,6 +46,7 @@ export class SingleProduitPage implements OnInit {
   // }
 
   addToCart(produit: Produit): void {
+    console.log("je suis la")
     var added: boolean = false;
     if (this.storage != null) {
       this.storage.create();
