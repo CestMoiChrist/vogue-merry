@@ -150,6 +150,9 @@ export class ListeProduitsPage implements OnInit {
     })
   }
 
+  onGoToPanier(){
+    this.router.navigate(['panier']);
+  }
 
 
 }
