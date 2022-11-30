@@ -2,37 +2,37 @@
     {
         "id": 12,
         "name":          "Crabe farci",
-        "img":           "../assets/img/crabe.jfif",
+        "img":           "../assets/img/imgrecette/crabe.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 13,
         "name":          "Sardine grillée",
-        "img":           "../assets/img/sardine.jfif",
+        "img":           "../assets/img/imgrecette/sardine.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 15,
         "name":          "Poisson chat fris",
-        "img":           "../assets/img/poissonfris.jfif",
+        "img":           "../assets/img/imgrecette/poissonfris.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 15,
         "name":          "Pâte fruits de mer",
-        "img":           "../assets/img/pate.jfif",
+        "img":           "../assets/img/imgrecette/pate.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 15,
         "name":          "Sushi",
-        "img":           "../assets/img/sushi.jfif",
+        "img":           "../assets/img/imgrecette/sushi.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     },
     {
         "id": 15,
         "name":          "Encornets",
-        "img":           "../assets/img/encornet.jfif",
+        "img":           "../assets/img/imgrecette/encornet.jfif",
         "description":   "Pas cher - Temps de préparation 10 min"
     }
 ]
