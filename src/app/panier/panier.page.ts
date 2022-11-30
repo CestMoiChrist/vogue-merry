@@ -37,6 +37,7 @@ export class PanierPage implements OnInit {
 
   closeModal() : void {
     this.modalCtrl.dismiss();
+    this.router.navigate(['categorie-produit']);
   }
 
   async deleteToast(article : panier, index : number){

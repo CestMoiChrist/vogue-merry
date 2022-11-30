@@ -1,24 +1,26 @@
 <app-header></app-header>
 <!-- <ion-title>Mon panier</ion-title> -->
 
-<ion-card *ngFor="let article of cart; let i = index">
-  <ion-card-content>      
-        <img [src]="article.item.owner">
-      
-      <h2>{{ article.item.name }}</h2>
-      <p>
-        <ion-badge color="secondary">{{ article.qty }}</ion-badge> x {{ article.item.price | currency: 'EUR':'symbol':undefined:'fr-FR' }}
+<ion-card *ngFor="let article of cart; let i = index" style="height:80%">
+
+      <img [src]="article.item.owner" style="height:100%; width:50%; margin: auto auto;float: left;">
+
+      <div style="float:left">
+      <h2 style="margin:4%">{{ article.item.name }}</h2>
+      <p style="margin:4%">
+        Quantité : {{ article.qty }} x {{ article.item.price | currency: 'EUR':'symbol':undefined:'fr-FR' }}
       </p>
-      <p> Vous économisez : {{ article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }} </p> 
-      <p> Total : {{ (article.qty * article.item.price) - article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }}</p>
-      <button (click)="deleteToast(article,i)" ion-button item-right clear color="danger">
-        <ion-icon name="remove-circle"></ion-icon>
-      </button>
-  </ion-card-content>
+      <p style="margin:4%"> Vous économisez : {{ article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }} </p> 
+      <p style="margin:4%"> Total : {{ (article.qty * article.item.price) - article.discount  | currency: 'EUR':'symbol':undefined:'fr-FR' }}</p>
+      <ion-button (click)="deleteToast(article,i)" style="margin:4%" color="danger">
+        <ion-icon name="remove-circle" ></ion-icon>
+      </ion-button>
+      </div>
+
 </ion-card>
   <ion-footer>
-    <ion-button (click)="closeModal()">Fermer</ion-button>
-    <button ion-button block outline (click)="onGotoCommande()">Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</button>
+    <ion-button (click)="closeModal()" style="margin:3%">Fermer</ion-button>
+    <ion-button (click)="onGotoCommande()">Panier : {{ total | currency: 'EUR':'symbol':undefined:'fr-FR' }}</ion-button>
   </ion-footer>
 
   

@@ -1,18 +1,13 @@
-<app-header></app-header>
-
 <ion-item>
   <ion-row>
-    <ion-col size="12" *ngFor="let point of pointRelais" class="ion-text-center">
-      <button (click)="confirmerToast()">
+    <ion-col size="12" class="ion-text-center">
+      <ion-button (click)="confirmerToast()" *ngFor="let point of pointRelais" style="display:block">
           <p>{{ point.pointRelais }}</p>
-      </button>
-    </ion-col>
-    <ion-col>
+      </ion-button>
       <p> La date de livraison à l'emplacement que vous avez indiqué se fera le {{ res }} , à partir de 9h.</p>
     </ion-col>
   </ion-row>
 </ion-item>
-
 
   <ion-button size="16" (click)="dismiss()" class="ion-text-center">
       Annuler
