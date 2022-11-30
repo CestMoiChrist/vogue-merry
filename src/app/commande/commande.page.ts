@@ -3,6 +3,7 @@ import { ModalController, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 import { PointRelais } from '../models/pointRelais';
 import { PointRelaisService } from '../services/point-relais.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class CommandePage implements OnInit {
   handlerMessage = '';
 
 
-  constructor(public storage : Storage, private pointRelaisService : PointRelaisService, public modalCtrl : ModalController, private toast : ToastController) { }
+  constructor(public storage : Storage, private pointRelaisService : PointRelaisService, public modalCtrl : ModalController, private toast : ToastController, public router:Router) { }
 
   ngOnInit(
     
@@ -58,6 +59,7 @@ export class CommandePage implements OnInit {
           role: 'info',
           handler: () => { 
             this.storage.clear();
+            this.onGoToHome();
           }
         },
         {
@@ -70,5 +72,9 @@ export class CommandePage implements OnInit {
       ]
     })
     await toast.present();
+  }
+
+  onGoToHome(){
+    this.router.navigate(['/home']);
   }
 }
