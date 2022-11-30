@@ -6,7 +6,7 @@
     style="height: 10%; padding: 3%; vertical-align: middle"
   >
     <div
-      (click)="onLoadProduit(produit); onGoToPanier()"
+      (click)="onLoadProduit(produit); onGoToPanier();addToCart(produit);"
       style="height: 100%; width: 80%; display: inline"
     >
       <img
@@ -22,11 +22,12 @@
 
       <h4 style="float: left">{{ produit.name }}</h4>
     </div>
+    
     <ion-icon name="search-outline"
       (click)="onLoadProduit(produit)"
       style="float: right; display: inline; margin:4%;"></ion-icon>
     <ion-icon name="add-outline" (click)="addToCart(produit);" style="float: right; display: inline; margin:4%;"></ion-icon>
-    <ion-icon name="remove-outline" (click)="deleteToast('bottom')" style="float: right; display: inline; margin:4%;"></ion-icon>
+    
     <p>{{ handlerMessage }}</p>
     <p>{{ roleMessage }}</p>
   </ion-card>
